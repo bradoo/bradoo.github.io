@@ -7,7 +7,15 @@
     <title>Brad's personal website</title>
   </head>
   <body>
-    <h1>Welcome to visit brad's peronsal website</h1>
-    <h2>Brad Woo lived in Dalian,China.<h2>
+    <div id="app">{{greeting}}</div>
+    <script src="https://unpkg.com/vue"></script>
+    <script>
+      const app=new vue({
+        el:'#app',
+        data:{
+          greeting:"welcome to enter brad's personal website"
+        }
+      });
+    </script>
   </body>
 </html>
