@@ -1,0 +1,358 @@
+* {
+	box-sizing: border-box
+}
+
+html {
+	height: 100%;
+	font-size: 20px;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	-webkit-overflow-scrolling: touch
+}
+
+body {
+	background-color: #454545;
+	font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.6);
+	margin: 0;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0
+}
+
+#wrapper {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: background-color 0.3s linear
+}
+
+.sidebar {
+	position: absolute;
+	width: 300px;
+	top: 0;
+	bottom: 0;
+	float: left;
+	margin: 0 1em
+}
+
+.sidebar .section {
+	background-color: rgba(255, 255, 255, 0.7);
+	margin: 1em 0;
+	border-radius: 6px;
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2)
+}
+
+.sidebar .option {
+	display: block;
+	width: 100%;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+	padding: 1em;
+	transition: background-color 0.2s linear
+}
+
+.sidebar .option:last-child {
+	border-bottom: 0
+}
+
+#predefined .option:hover {
+	background-color: rgba(255, 255, 255, 0.4);
+	cursor: pointer
+}
+
+#controls {
+	background-color: transparent;
+	margin-top: 0
+}
+
+#controls button.option {
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: #fff;
+	border: 0;
+	cursor: pointer;
+	margin: 0;
+	padding: 1em;
+	color: rgba(0, 0, 0, 0.6);
+	border-radius: 6px;
+	font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif
+}
+
+#controls button.option:last-child {
+	border-bottom: 0
+}
+
+#controls button.option:hover {
+	background-color: #fff
+}
+
+#controls button.option.timerRunning {
+	background-color: rgba(255, 255, 255, 0.7)
+}
+
+#controls button.option.timerRunning:hover {
+	background-color: rgba(255, 255, 255, 0.8)
+}
+
+#controls #resetButton {
+	transform: translate(-2000px);
+	margin-top: 1em
+}
+
+#custom input {
+	float: right;
+	display: block;
+	width: 3.5em;
+	font-size: 1rem;
+	text-align: center;
+	border: 2px solid transparent;
+	outline: none;
+	padding: 0.2em;
+	margin: -5px 0 0 0;
+	background-color: #fff;
+	color: rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+	font-family: -apple-system, BlinkMacSystemFont, Arial, Helvetica, sans-serif;
+	-webkit-font-smoothing: antialiased
+}
+
+#custom input:focus {
+	background-color: #fff
+}
+
+#custom input:focus.valid {
+	border-color: #3fcd3c
+}
+
+#custom input:focus~.tooltip {
+	-webkit-animation: tooltipEntrance 0.15s linear;
+	animation: tooltipEntrance 0.15s linear;
+	display: block;
+	opacity: 1
+}
+
+#custom input.invalid {
+	border-color: #e54355
+}
+
+#custom input.invalid~.tooltip {
+	display: block;
+	opacity: 1
+}
+
+#predefined .label,
+#settings .label {
+	margin-left: 0.5em;
+	vertical-align: middle
+}
+
+.tooltip {
+	display: none;
+	opacity: 0;
+	background: #fff;
+	position: absolute;
+	right: -175px;
+	margin-top: -2.2em;
+	border-radius: 10px;
+	min-width: 160px;
+	padding: 15px 10px;
+	font-size: 0.9rem;
+	text-align: center
+}
+
+.tooltip:before {
+	content: '';
+	display: block;
+	width: 0;
+	height: 0;
+	position: absolute;
+	border-top: 8px solid transparent;
+	border-bottom: 8px solid transparent;
+	border-right: 8px solid #fff;
+	left: -8px;
+	top: 18px
+}
+
+.clockWrapper {
+	float: left;
+	display: table;
+	width: 100%;
+	height: 80%
+}
+
+.clockInnerWrapper {
+	display: table-cell;
+	vertical-align: middle;
+	width: 100%;
+	height: 100%
+}
+
+.clock {
+	font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-feature-settings: "tnum";
+	display: block;
+	text-align: center;
+	font-size: 3rem;
+	color: rgba(255, 255, 255, 0.3);
+	padding-left: 300px
+}
+
+#grower {
+	position: absolute;
+	height: 2rem;
+	bottom: 0;
+	background-color: rgba(255, 255, 255, 0.7)
+}
+
+#hideAway {
+	transform: translateY(0);
+	opacity: 1;
+	max-height: 1000px
+}
+
+#infoButton {
+	position: absolute;
+	z-index: 100;
+	top: 3vmin;
+	right: 3vmin;
+	font-size: 1rem;
+	font-weight: 600;
+	background-color: rgba(255, 255, 255, 0.7);
+	border: 0;
+	cursor: pointer;
+	margin: 0;
+	height: 45px;
+	width: 45px;
+	color: rgba(0, 0, 0, 0.6);
+	border-radius: 100%;
+	font-family: monospace;
+	display: flex;
+	justify-content: center;
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+	border: 1px solid rgba(255, 255, 255, 0.3)
+}
+
+#infoButton:last-child {
+	border-bottom: 0
+}
+
+#infoButton:hover {
+	background-color: #fff
+}
+
+#info {
+	display: none;
+	opacity: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	justify-content: center;
+	align-items: center
+}
+
+#info .info__inner {
+	background-color: #fff;
+	border-radius: .5rem;
+	box-shadow: 0 0 2em rgba(0, 0, 0, 0.2);
+	padding: calc(2% + 1em);
+	max-width: 45em;
+	max-height: 100vh;
+	overflow: scroll
+}
+
+@-webkit-keyframes tooltipEntrance {
+	0% {
+		display: block;
+		opacity: 0
+	}
+
+	1% {
+		opacity: 0;
+		transform: translateX(15px)
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
+@keyframes tooltipEntrance {
+	0% {
+		display: block;
+		opacity: 0
+	}
+
+	1% {
+		opacity: 0;
+		transform: translateX(15px)
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0)
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.clockWrapper {
+		display: block;
+		height: auto
+	}
+
+	.clockInnerWrapper {
+		display: block;
+		height: auto
+	}
+
+	.clock {
+		width: 100% !important;
+		padding-left: 0
+	}
+
+	.sidebar {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		padding: 0 1em
+	}
+
+	.sidebar .option {
+		padding: 0.8em !important
+	}
+
+	.tooltip {
+		right: 80px;
+		margin-top: -1.8em;
+		padding: 0.6em
+	}
+
+	.tooltip:before {
+		left: auto;
+		right: -12px;
+		border: 6px solid transparent;
+		border-left: 6px solid #fff;
+		top: 11px
+	}
+}
+
+@media screen and (max-height: 570px) {
+	.sidebar .option {
+		padding: 0.6em !important
+	}
+
+	#custom input {
+		padding: 0em;
+		margin-top: -2px
+	}
+}
+
+/*# sourceMappingURL=styles.css.map */
