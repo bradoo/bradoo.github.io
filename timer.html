@@ -3,11 +3,32 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
     <style>
+        .button{
+            background: transparent;
+            box-sizing: border-box;
+            height: 20px;
+            cursor: pointer;
+            border-color: transparent transparent transparent #202020;
+            transition: 100ms all ease;
+            will-change: border-width;
+        }
+        .button.play {
+            border-style: solid;
+            border-width: 10px 0 10px 15px;
+        }
+        .button.pause {
+            border-style: double;
+            border-width: 0 0 0 15px;
+        }
+        .button.hover {
+            border-color: transparent transparent transparent #404040;
+        }
         .action_button{
             height:10%;
             font-size:15pt;
             display: block;
-            margin:20pt 20pt 20pt 20pt;
+            margin:10pt 10pt 10pt 10pt;
+            float:left;
         }
         .btn_main_content{
             width:100%;
@@ -20,15 +41,15 @@
         .timebar{
             background:#00CCFF;
             width:100%;
-            height:10pt;
+            height:20pt;
         }
         .tx_input {
-            width:100pt;
-            font-size:15pt;
+            width:80pt;
+            font-size:18pt;
             text-align-last:center;
         }
         label {
-            font-size:20pt;
+            font-size:18pt;
             height:100px;
         }
         li {
@@ -37,40 +58,53 @@
     </style>
     <script>
         var myInterval;
+        var intervalMiliSec=1000;
         var currentSecond=0;
-        var greenMinutes=1;
-        var yellowMinutes=1.5;
-        var redMinutes=2;
-        var threshholdMinutes=2.5;
         var speakerName="";
         var speechType="";
+        var $={getById:function(id){
+                return document.getElementById(id);
+                },show:function(id){
+                    document.getElementById(id).style.display="block";
+                },hide:function(id){
+                    document.getElementById(id).style.display="none";
+                },setBg:function(id,bg){
+                    document.getElementById(id).style.background=bg;
+                }
+              };
         function myTimer(){
             currentSecond++;
-            var percentage=currentSecond/60/(document.getElementById("tx_threshhold_minute").value);
+            var currentMinuteFloat=currentSecond/60;
+            console.log("myTimer() currentSecond="+currentSecond);
+            var percentage=currentMinuteFloat/(document.getElementById("tx_threshhold_minute").value);
             percentage=(percentage>1)?1:percentage;
-            document.getElementById("timebar").value=percentage;            
-            document.getElementById("timebar").max=1;
-            switch(currentSecond/60){
-                case greenMinutes:
-                    console.log("myTimer() greenMinutes="+greenMinutes);
-                    document.getElementById("main-content").style.background="#00CC33";
+            $.getById("timebar").value=percentage;            
+            $.getById("timebar").max=1;
+            console.log("myTimer() currentMinuteFloat="+currentMinuteFloat);
+            switch(currentMinuteFloat){
+                case parseFloat($.getById("tx_green_minute").value):
+                    console.log("myTimer() turn green greenMinutes="+$.getById("tx_green_minute").value);
+                    $.setBg("main-content","#00CC33");
                     break;
-                case yellowMinutes:
-                    console.log("myTimer() yellowMinutes="+yellowMinutes);
-                    document.getElementById("main-content").style.background="#FFCC33";
+                case parseFloat($.getById("tx_yellow_minute").value):
+                    console.log("myTimer() turn yellow yellowMinutes="+$.getById("tx_yellow_minute").value);
+                    $.setBg("main-content","#FFCC33");
                     break;
-                case redMinutes:
-                    console.log("myTimer() redMinutes="+redMinutes);
-                    document.getElementById("main-content").style.background="#FF0033";
+                case parseFloat($.getById("tx_red_minute").value):
+                    console.log("myTimer() turn red redMinutes="+$.getById("tx_red_minute").value);
+                    $.setBg("main-content","#FF0033");
                     break;
 
             }
-            if(currentSecond/60>threshholdMinutes&&currentSecond/60<threshholdMinutes+0.2){
-                console.log("myTimer() threshholdMinutes="+threshholdMinutes);
-                if(document.getElementById("main-content").style.background=="#FF0033")
-                    document.getElementById("main-content").style.background="#FF0099";
+            var threshholdMinutes=parseFloat($.getById("tx_threshhold_minute").value);
+            console.log("myTimer() threshholdMinutes="+threshholdMinutes);
+            console.log("myTimer() first boolean="+(currentMinuteFloat>threshholdMinutes));
+            if(currentMinuteFloat>threshholdMinutes){
+                console.log("myTimer() background="+$.getById("main-content").style.background);
+                if($.getById("main-content").style.background=="rgb(255, 0, 51) none repeat scroll 0% 0%")
+                    $.setBg("main-content","#990099");
                 else
-                    document.getElementById("main-content").style.background=="#FF0033";
+                    $.setBg("main-content","#FF0033");
             }
             var minutes=Math.floor(currentSecond/60);
             if(minutes==0) minutes="00";
@@ -78,79 +112,76 @@
             var remainSeconds=currentSecond%60;
             if(remainSeconds==0) remainSeconds="00";
             else if(remainSeconds<10) remainSeconds="0"+remainSeconds;
-            
-            document.getElementById("main-content").innerHTML=minutes+":"+remainSeconds;  
+            $.getById("main-content").innerHTML=minutes+":"+remainSeconds;  
         }
         function startTimer(greenMinutes,yellowMinutes,redMinutes,speechType){
-            speakerName=document.getElementById("speaker_name").value;
+            speakerName=$.getById("tx_speaker_name").value;
             console.log(speakerName);
             console.log(speechType);
             if(speakerName==""){
                 alert("Please enter the speaker name!");
                 return;
             }
-            greenMinutes=greenMinutes;
-            yellowMinutes=yellowMinutes;
-            redMinutes=redMinutes;
-            threshholdMinutes=redMinutes+0.5;
             speechType=speechType;
-            document.getElementById("tx_green_minute").value=greenMinutes;
-            document.getElementById("tx_yellow_minute").value=yellowMinutes;
-            document.getElementById("tx_red_minute").value=redMinutes;
-            document.getElementById("tx_threshhold_minute").value=redMinutes+0.5;
-            document.getElementById("tx_speech_type").value=speechType;
+            $.getById("tx_green_minute").value=greenMinutes;
+            $.getById("tx_yellow_minute").value=yellowMinutes;
+            $.getById("tx_red_minute").value=redMinutes;
+            $.getById("tx_threshhold_minute").value=parseFloat(redMinutes)+0.5;
+            $.getById("tx_speech_type").value=speechType;
             console.log("startTT() myInterval="+myInterval);
             currentSecond=0;
-            document.getElementById("btns").style.display="none";
-            myInterval=setInterval(myTimer,1000);
-            document.getElementById("div_timer").style.display="block";
-            document.getElementById("div_time_log").style.display="none";
-            document.getElementById("div_time_rule").style.display="none";
-            document.getElementById("h1_speaker").innerHTML=speechType+" "+speakerName+" is speaking...";
+            $.hide("btns");
+            myInterval=setInterval(myTimer,intervalMiliSec);
+            $.show("div_timer");
+            $.hide("div_time_log");
+            $.hide("div_time_rule");
+            $.getById("h1_speaker").innerHTML=speechType+" "+speakerName+" is speaking...";
         }
         function pauseTimer(){
             console.log("pauseTimer() "+(new Date())+"myInterval="+myInterval);
+            $.getById("button_pause_play").className="button "+(myInterval?"play":"pause");
             if(myInterval){
                 clearInterval(myInterval);
                 myInterval=null;
             }else
-                myInterval=setInterval(myTimer,1000);
+                myInterval=setInterval(myTimer,intervalMiliSec);
         }
         function stopTimer(){
             console.log("stopTimer() "+(new Date())+"myInterval="+myInterval);
             console.log("stopTimer() "+speechType);
             var newLog = document.createElement("LI");
-            if(currentSecond/60>document.getElementById("tx_threshhold_minute").value)
-                newLog.innerHTML="<font color=\"red\">";
-            newLog.innerHTML+=document.getElementById("tx_speech_type").value+" "+speakerName+" : "+document.getElementById("tx_red_minute").value+"<->"+document.getElementById("main-content").innerHTML;
-            if(currentSecond/60>document.getElementById("tx_threshhold_minute").value)
-                newLog.innerHTML+="</font>";
-            document.getElementById("ol_time_log").appendChild(newLog);
+            var currentMinutes=currentSecond/60;
+            var threshhold=parseFloat(document.getElementById("tx_threshhold_minute").value);
+            var ifOverTime=currentMinutes>threshhold;
+            newLog.innerHTML=(ifOverTime?"<font color=\"red\">":"")+document.getElementById("tx_speech_type").value+" "+speakerName+" : "+document.getElementById("tx_red_minute").value+"<->"+document.getElementById("main-content").innerHTML+(ifOverTime?"</font>":"");
+            $.getById("ol_time_log").appendChild(newLog);
             currentSecond=0;
-            document.getElementById("timebar").value=0;
-            document.getElementById("main-content").innerHTML="00:00";
+            $.getById("timebar").value=0;
+            $.getById("main-content").innerHTML="00:00";
             clearInterval(myInterval);
-            document.getElementById("btns").style.display="block";
-            document.getElementById("div_time_log").style.display="none";
-            document.getElementById("div_timer").style.display="none";
-            document.getElementById("div_time_rule").style.display="block";
+            $.show("btns");
+            $.hide("div_time_log");
+            $.hide("div_timer");
+            $.show("div_time_rule");
+            $.getById("button_pause_play").className="button pause";
+            $.setBg("main-content","#00CCFF");
         }
         function startCustomizedTimer(){
             startTimer(document.getElementById("tx_green_minute").value,
                        document.getElementById("tx_yellow_minute").value,
                        document.getElementById("tx_red_minute").value,
                        document.getElementById("tx_speech_type").value
-                      );
+            );
         }
         function showLogOnly(){
-            document.getElementById("btns").style.display="none";
-            document.getElementById("div_time_log").style.display="block";
-            document.getElementById("div_time_rule").style.display="none";
+            $.hide("btns");
+            $.show("div_time_log");
+            $.hide("div_time_rule");
         }
         function backToMain(){
-            document.getElementById("btns").style.display="block";
-            document.getElementById("div_time_log").style.display="none";
-            document.getElementById("div_time_rule").style.display="block";
+            $.show("btns");
+            $.hide("div_time_log");
+            $.show("div_time_rule");
         }
         var data=[
             ["Table Topics",1,1.5,2,"TT"],
@@ -161,10 +192,10 @@
             ];
     </script>
 </head>
-<body style="width:99%">
+<body style="width:99%;float:left;">
     <div id="btns" style="font-size: 15pt;width:100%;float:left">
-        <h2>
-            <label>Speaker Name:</label><input type="text" id="speaker_name" holder="speaker name" class="tx_input"/>
+        <h2 style="margin-left:10%;">
+            <label>Speaker Name:</label><input type="text" id="tx_speaker_name" holder="speaker name" class="tx_input"/>
             <label>Speech Type:</label><input type="text" id="tx_speech_type" class="tx_input"/>
         </h2>
         <script>
@@ -180,26 +211,28 @@
     </div>
     <div style="float:left;margin-left: 20pt;" id="div_time_rule">
         <p>
-        <label style="background: green"><font color="white"><input type="text" value="1" id="tx_green_minute" class="tx_input"/>分钟绿牌</font></label>，
-        <label style="background: orange"><font color="white"><input type="text" value="2" id="tx_yellow_minute" class="tx_input"/>分钟黄牌</font></label>，
-        <label style="background: red"><font color="white"><input type="text" value="3" id="tx_red_minute" class="tx_input"/>分钟红牌</font></label>，
-        <label style="background: purple"><font color="white"><input type="text" value="3.5" id="tx_threshhold_minute" class="tx_input"/>分钟超时</font></label>
+        <label style="background: green"><font color="white"><input type="text" value="1" id="tx_green_minute" class="tx_input"/>minutes green</font></label>，
+        <label style="background: orange"><font color="white"><input type="text" value="2" id="tx_yellow_minute" class="tx_input"/>minutes yellow</font></label>，
+        <label style="background: red"><font color="white"><input type="text" value="3" id="tx_red_minute" class="tx_input"/>minutes red</font></label>，
+        <label style="background: purple"><font color="white"><input type="text" value="3.5" id="tx_threshhold_minute" class="tx_input"/>minutes overtime</font></label>
         </p>
         <button onclick="showLogOnly()" class="action_button">Time Log</button>
      </div>     
-    <div id="div_timer" style="align-content:center;width:100%;display:none">
-        <h1 id="h1_speaker" style="align-content:center;width:100%">Brad is speaking...</h1>
+    <div id="div_timer" style="width:90%;display:none;float:left">
+        <button id="h1_speaker" style="width:50%;float:left;" class="action_button">Brad is speaking...</button>
+        <button onclick="stopTimer()" class="action_button">Reset</button>
         <button onclick="pauseTimer()" ondblclick="stopTimer()" id="main-content" class="btn_main_content">00:00</button>
-        <progress id="timebar" class="timebar" max="100" value="0"></progress>
+        <div style="width:3%;float:left;align-content: center;"><button onclick="pauseTimer()" class="button pause" id="button_pause_play"></button></div>
+        <div style="width:97%;float:left"><progress id="timebar" class="timebar" max="100" value="0"></progress></div>
     </div>
-    <div id="div_time_log" style="align-content:center;width:100%;display:none">
+    <div id="div_time_log" style="align-content:center;width:100%;display:none;float:left;">
         <button onclick="backToMain()" class="action_button">Back to Main</button>
         <h1>
         <script>
             document.write(new Date());
         </script>
         </h1>
-        <ol id="ol_time_log"></ol>
+        <ol id="ol_time_log" style="float:left;"></ol>
     </div>
     </body>
 </html>
