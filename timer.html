@@ -180,6 +180,7 @@
             endTime=currentDate.getHours()+":"+currentDate.getMinutes()+":"+currentDate.getSeconds();
             console.log("stopTimer() "+(new Date())+"myInterval="+myInterval);
             console.log("stopTimer() "+speechType);
+            $.getById("btn_timebar").style.width="0%";
             var newLog = document.createElement("LI");
             var currentMinutes=currentSecond/60;
             var threshhold=parseFloat($.getById("tx_threshhold_minute").value);
@@ -220,6 +221,7 @@
             $.show("div_time_rule");
         }
         var data=[
+            ["Toastmaster",0.5,0.75,1,"TM"],
             ["Table Topics",1,1.5,2,"TT"],
             ["Individual Evaluation",1.5,2.5,3,"IE"],
             ["General Evaluator",3,4,5,"GE"],
@@ -229,7 +231,7 @@
     </script>
 </head>
 <body>
-    <div id="btns" style="font-size:15pt;width:90%;float:left;margin-top:13%;margin-left:10%;margin-right:15%">
+    <div id="btns" style="font-size:15pt;width:90%;float:left;margin-top:10%;margin-left:10%;margin-right:15%">
         <p>
             <label>Step 1: Enter the speaker Name:</label><input type="text" id="tx_speaker_name" holder="speaker name" class="tx_input"/>
         </p>
@@ -245,7 +247,7 @@
                 }
             </script>
             <div style="float:left">
-                <button value="Customized Time Rule" onclick="startCustomizedTimer()" class="action_button" id="btn-ps">Customized Time Rule</button>
+                <button onclick="startCustomizedTimer()" class="action_button" id="btn-ps">Customize</button>
             </div>
         </div>
     </div>
