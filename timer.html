@@ -123,6 +123,7 @@
                 console.log("myTimer() threshholdMinutes="+threshholdMinutes);
                 console.log("myTimer() first boolean="+(currentMinuteFloat>threshholdMinutes));
                 if(currentMinuteFloat>threshholdMinutes){
+                    $.getById("ebd_bell_ring").play()
                     console.log("myTimer() background="+$.getById("btn_timebar").style.background);
                     if($.getById("btn_timebar").style.background=="rgb(255, 0, 51) none repeat scroll 0% 0%"){
                         $.setBgImg("yellow1.jpeg");
@@ -224,7 +225,7 @@
             var data=[
                 ["Toastmaster",0.5,0.75,1,"TM"],
                 ["Table Topics",1,1.5,2,"TT"],
-                ["Individual Evaluation",1.5,2.5,3,"IE"],
+                ["Individual Evaluation",2,2.5,3,"IE"],
                 ["General Evaluator",3,4,5,"GE"],
                 ["Ice Breaker",4,5,6,"IB"],
                 ["Prepared Speech",5,6,7,"PS"]
@@ -251,6 +252,9 @@
         </script>
     </head>
     <body>
+        <audio id="ebd_bell_ring">
+          <source src="mixkit-home-standard-ding-dong-109.wav" type="audio/wav">
+        </audio>
         <div id="speaker_list" style="z-index:2;position:absolute;display:none;background:white;color:black;" onfocus="hideMe(this)">
             <ul style="z-index:3">
                 <li style="z-index:4">Brad</li>
@@ -271,7 +275,7 @@
                         for(var i=0;i<data.length;i++){
                             document.write("<div style=\"float:left\">");
                             document.write("<input type=\"radio\" name=\"speechType\" value=\"TM\" id=\"radio_"+data[i][4]+"\" onclick=\"setTimeRule("+data[i][1]+","+data[i][2]+","+data[i][3]+",'"+data[i][4]+"')\"/>");
-                            document.write("<label>"+data[i][0]+"("+data[i][3]+" minutes)</label>");
+                            document.write("<label>"+data[i][0]+"("+data[i][1]+"-"+data[i][3]+" minutes)</label>");
                             document.write("</div>");
                         }
                     </script>
