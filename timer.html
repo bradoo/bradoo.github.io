@@ -236,7 +236,7 @@
         <p>
             <label>Step 2: Select the speech type: </label>
         </p>
-        <div>
+        <div style="width:50%;margin-left:15%;">
             <script>
                 for(var i=0;i<data.length;i++){
                     document.write("<div style=\"float:left\">");
@@ -254,10 +254,14 @@
             <label>Step 3: Enter speech type:</label><input type="text" id="tx_speech_type" class="tx_input"/>
         </p>
         <div style="margin-left:1%">
-            <label style="background: green"><font color="white"><input type="text" value="1" id="tx_green_minute" class="tx_input"/>minutes green</font></label>
-            <label style="background: orange"><font color="white"><input type="text" value="2" id="tx_yellow_minute" class="tx_input"/>minutes yellow</font></label>
-            <label style="background: red"><font color="white"><input type="text" value="3" id="tx_red_minute" class="tx_input"/>minutes red</font></label>
-            <label style="background: purple"><font color="white"><input type="text" value="3.5" id="tx_threshhold_minute" class="tx_input"/>minutes overtime</font></label>
+            <p>
+                <label style="background: green"><font color="white"><input type="text" value="1" id="tx_green_minute" class="tx_input"/>minutes green</font></label>
+                <label style="background: orange"><font color="white"><input type="text" value="2" id="tx_yellow_minute" class="tx_input"/>minutes yellow</font></label>
+            </p>
+            <p>
+                <label style="background: red"><font color="white"><input type="text" value="3" id="tx_red_minute" class="tx_input"/>minutes red</font></label>
+                <label style="background: purple"><font color="white"><input type="text" value="3.5" id="tx_threshhold_minute" class="tx_input"/>minutes overtime</font></label>
+            </p>
         </div>
          <p>
             <label>Step 4: Check time log</label>
