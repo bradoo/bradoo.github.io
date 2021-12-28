@@ -51,7 +51,12 @@
                 height:18pt;
             }
             .tx_input {
-                width:80pt;
+                width:40pt;
+                font-size:12pt;
+                text-align-last:center;
+            }
+            .tx_speaker {
+                width:150pt;
                 font-size:12pt;
                 text-align-last:center;
             }
@@ -300,10 +305,26 @@
             <div style="z-index:1;font-size:15pt;width:90%;float:left;margin-left:10%;margin-right:15%">
                 <p>
                     <label>Step 1: Enter the speaker Name:</label>
-                    <input type="text" id="tx_speaker_name" holder="speaker name" class="tx_input" onkeydown="popupSpeakerList(this)"/>
+                    <input type="text" id="tx_speaker_name" holder="speaker name" class="tx_speaker" onkeydown="popupSpeakerList(this)"/>
                 </p>
+            </div>
+            <div style="float:left;margin-left:10%;width:90%;" id="div_start_buttons">
                 <p>
-                    <label>Step 2: Select the speech type: </label>
+                    <label>Step 2: Start the regular timer: </label>
+                </p>
+                <div style="width:60%;margin-left:15%;">
+                    <script>
+                        for(var i=0;i<data.length;i++){
+                            document.write("<div style=\"float:left\">");
+                            document.write("<button onclick=\"startTimer("+data[i][1]+","+data[i][2]+","+data[i][3]+",'"+data[i][4]+"')\" class=\"action_button\">"+data[i][0]+"</button>");
+                            document.write("</div>");
+                        }
+                    </script>
+                </div>
+            </div>
+            <div style="float:left;margin-left:10%;width:90%;">
+                <p>
+                    <label>Step 3: Customize the regular timer: </label>
                 </p>
                 <div style="margin-left:15%;float:left;">
                     <script>
@@ -318,7 +339,11 @@
             </div>
             <div style="float:left;margin-left:10%;width:90%;" id="div_time_rule">
                 <p>
-                    <label>Step 3: Enter speech type & time rule:</label><input type="text" id="tx_speech_type" class="tx_input"/>
+                    <label>Step 3.1: Enter the customized speech type:</label><input type="text" id="tx_speech_type" class="tx_speaker"/>
+                </p>
+                <p>
+                    <label>Step 3.2: Set time rule:</label>
+                    <button onclick="startCustomizedTimer()" style="background:grey;color:aliceblue;height:40px;font-size:20px" id="btn-ps">Start the Customized Timer</button>
                 </p>
                 <div style="margin-left:1%">
                     <p>
@@ -329,31 +354,13 @@
                         <label style="background: red"><font color="white"><input type="text" value="3" id="tx_red_minute" class="tx_input"/>minutes red</font></label>
                         <label style="background: purple"><font color="white"><input type="text" value="3.5" id="tx_threshhold_minute" class="tx_input"/>minutes overtime</font></label>
                     </p>
-                </div>            
+                </div>   
+
             </div>
-            <div style="float:left;margin-left:10%;width:90%;" id="div_start_buttons">
-                <p>
-                    <label>Step 4: Start the timer: </label>
-                </p>
-                <div style="width:60%;margin-left:15%;">
-                    <script>
-                        for(var i=0;i<data.length;i++){
-                            document.write("<div style=\"float:left\">");
-                            document.write("<button onclick=\"startTimer("+data[i][1]+","+data[i][2]+","+data[i][3]+",'"+data[i][4]+"')\" class=\"action_button\">"+data[i][0]+"</button>");
-                            document.write("</div>");
-                        }
-                    </script>
-                    <div style="float:left">
-                        <button onclick="startCustomizedTimer()" style="background:black;color:aliceblue;height:60px;width:150px;font-size:30px" id="btn-ps">Customize</button>
-                    </div>
-                </div>
-            </div>
+            
             <div style="float:left;margin-left:10%;width:90%;" id="div_check_time_log"> 
-                 <p>
-                    <label>Step 5: Check time log</label>
-                </p>
                 <div style="margin-left:15%;">
-                    <button onclick="showLogOnly()" class="action_button">Time Log</button>
+                    <button onclick="showLogOnly()" style="width:70%;font-size:15pt;height:30pt;">Check the time log</button>
                 </div>
             </div>
         </div>
@@ -361,7 +368,7 @@
             <label id="h1_speaker" style="width:50%;float:left;margin-left:30%">Brad is speaking...</label>
             <div onclick="pauseTimer()" ondblclick="stopTimer()" id="div_main_content" class="div_main_content">00:00</div>
             <div style="width:3%;float:left;align-content: center;"><button onclick="pauseTimer()" class="button pause" id="button_pause_play"></button></div>
-            <div style="width:97%;float:left"><button id="btn_timebar" class="btn_timebar"></button></div>
+            <div style="width:97%;float:left"><button id="btn_timebar" class="btn_timebar" onclick="stopTimer()"></button></div>
         </div>
         <div id="div_time_log" style="align-content:center;width:90%;display:none;float:left;margin-left:18%;">
             <h1 style="color:aliceblue">
