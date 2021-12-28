@@ -121,6 +121,7 @@
                         //$.setBgImg("green1.jpeg");
                         $.setBodyBg("#00CC33");
                         $.setBg("btn_timebar","#00CC33");
+                        $.setBg("div_logo","#00CC33");
                         $.getById("label_color").innerHTML="GREEN";
                         break;
                     case parseFloat($.getById("tx_yellow_minute").value):
@@ -128,6 +129,7 @@
                         //$.setBgImg("yellow1.jpeg");
                         $.setBodyBg("yellow");
                         $.setBg("btn_timebar","yellow");
+                        $.setBg("div_logo","yellow");
                         $.getById("label_color").innerHTML="YELLOW";
                         break;
                     case parseFloat($.getById("tx_red_minute").value):
@@ -135,6 +137,7 @@
                         //$.setBgImg("red1.jpeg");
                         $.setBodyBg("#FF0033");
                         $.setBg("btn_timebar","#FF0033");
+                        $.setBg("div_logo","#FF0033");
                         $.getById("label_color").innerHTML="RED";
                         break;
                 }
@@ -147,10 +150,12 @@
                     if($.getById("btn_timebar").style.background=="rgb(255, 0, 51) none repeat scroll 0% 0%"){
                         //$.setBgImg("yellow1.jpeg");
                         $.setBodyBg("#990099");
+                        $.setBg("div_logo","#990099");
                         $.setBg("btn_timebar","#990099");
                     }else{
                         //$.setBgImg("red1.jpeg");
                         $.setBodyBg("#FF0033");
+                        $.setBg("div_logo","#FF0033");
                         $.setBg("btn_timebar","#FF0033");
                     }
                 }
@@ -228,6 +233,7 @@
                 //$.setBgImg("default.png");
                 $.setBodyBg("#336699");
                 $.setBg("btn_timebar","#336699");
+                $.setBg("div_logo","#336699");
                 $.getById("label_color").innerHTML="";
             }
             function startCustomizedTimer(){
@@ -277,11 +283,11 @@
         </script>
     </head>
     <body>
-        <div style="margin-left:25%;margin-top:3.5%;z-index:100;position:absolute;top:3%;">
+        <div style="margin-left:30%;margin-top:3.5%;z-index:100;position:absolute;top:3%;">
             <label id="label_color"></label>
         </div>
-        <div style="margin-left:10%;margin-top:0px;z-index:200;position:absolute;top:3%;">
-            <a href="#" onclick="stopTimer()"><img src="toastmasters-logo@2x.png" width="50%"/></a>
+        <div id="div_logo" style="width:220px;z-index:200;position:absolute;top:2.5%;left:10%;background:#336699">
+            <a href="#" onclick="stopTimer()"><img src="toastmasters-logo@2x.png" width="70%" style="margin-left:15%"/></a>
         </div>
         <audio id="ebd_bell_ring">
           <source src="mixkit-home-standard-ding-dong-109.wav" type="audio/wav">
@@ -360,7 +366,7 @@
             <div style="width:3%;float:left;align-content: center;"><button onclick="pauseTimer()" class="button pause" id="button_pause_play"></button></div>
             <div style="width:97%;float:left"><button id="btn_timebar" class="btn_timebar"></button></div>
         </div>
-        <div id="div_time_log" style="align-content:center;width:90%;display:none;float:left;margin-left:16%;">
+        <div id="div_time_log" style="align-content:center;width:90%;display:none;float:left;margin-left:18%;">
             <h1 style="color:aliceblue">
             <script>
                 document.write(new Date());
