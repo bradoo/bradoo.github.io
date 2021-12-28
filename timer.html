@@ -4,13 +4,13 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <style>
             body {
-              #background-image: url(default.png);
               background:#336699;
               background-repeat: no-repeat;
               background-attachment: fixed;
               background-size: 100% 100%;
             }
             .button{
+                background:#336699;
                 box-sizing: border-box;
                 height: 20px;
                 cursor: pointer;
@@ -76,7 +76,7 @@
             .div_frame{
                 z-index:1;
                 border-bottom-color:lightgrey;
-                border-left-color:grey;
+                border-left-color:darkgray;
                 border-right-color:grey;
                 border-top-color:black;
                 border-style:solid;
@@ -107,6 +107,19 @@
                         document.body.style["background"]=color;
                     }
                   };
+            function changeBgColors(color,colorName){
+                $.setBodyBg(color);
+                $.setBg("btn_timebar",color);
+                $.setBg("div_logo",color);
+                $.setBg("button_pause_play",color);
+                $.getById("label_color").innerHTML=colorName;
+            }
+            function changeColors(bgcolor,forecolor){
+                $.getById("div_frame").style["border-top-color"]=bgcolor;
+                $.getById("label_color").style.color=forecolor;
+                $.getById("h1_speaker").style.color=forecolor;
+                $.getById("div_main_content").style.color=forecolor;
+            }
             function myTimer(){
                 currentSecond++;
                 var currentMinuteFloat=currentSecond/60;
@@ -118,27 +131,18 @@
                 switch(currentMinuteFloat){
                     case parseFloat($.getById("tx_green_minute").value):
                         console.log("myTimer() turn green greenMinutes="+$.getById("tx_green_minute").value);
-                        //$.setBgImg("green1.jpeg");
-                        $.setBodyBg("#00CC33");
-                        $.setBg("btn_timebar","#00CC33");
-                        $.setBg("div_logo","#00CC33");
-                        $.getById("label_color").innerHTML="GREEN";
+                        changeBgColors("#00CC33","GREEN");
+                        changeColors("black","white");
                         break;
                     case parseFloat($.getById("tx_yellow_minute").value):
                         console.log("myTimer() turn yellow yellowMinutes="+$.getById("tx_yellow_minute").value);
-                        //$.setBgImg("yellow1.jpeg");
-                        $.setBodyBg("yellow");
-                        $.setBg("btn_timebar","yellow");
-                        $.setBg("div_logo","yellow");
-                        $.getById("label_color").innerHTML="YELLOW";
+                        changeBgColors("yellow","YELLOW");
+                        changeColors("white","black");
                         break;
                     case parseFloat($.getById("tx_red_minute").value):
                         console.log("myTimer() turn red redMinutes="+$.getById("tx_red_minute").value);
-                        //$.setBgImg("red1.jpeg");
-                        $.setBodyBg("#FF0033");
-                        $.setBg("btn_timebar","#FF0033");
-                        $.setBg("div_logo","#FF0033");
-                        $.getById("label_color").innerHTML="RED";
+                        changeBgColors("#FF0033","RED");
+                        changeColors("black","white");
                         break;
                 }
                 var threshholdMinutes=parseFloat($.getById("tx_threshhold_minute").value);
@@ -148,15 +152,11 @@
                     $.getById("ebd_bell_ring").play()
                     console.log("myTimer() background="+$.getById("btn_timebar").style.background);
                     if($.getById("btn_timebar").style.background=="rgb(255, 0, 51) none repeat scroll 0% 0%"){
-                        //$.setBgImg("yellow1.jpeg");
-                        $.setBodyBg("#990099");
-                        $.setBg("div_logo","#990099");
-                        $.setBg("btn_timebar","#990099");
+                        changeBgColors("#990099","Overtime");
+                        changeColors("white","black");
                     }else{
-                        //$.setBgImg("red1.jpeg");
-                        $.setBodyBg("#FF0033");
-                        $.setBg("div_logo","#FF0033");
-                        $.setBg("btn_timebar","#FF0033");
+                        changeBgColors("#FF0033","RED");
+                        changeColors("black","white");
                     }
                 }
                 var minutes=Math.floor(currentSecond/60);
@@ -224,17 +224,14 @@
                     $.getById("btn_timebar").value=0;
                     $.getById("div_main_content").innerHTML="00:00";
                     clearInterval(myInterval);
+                    $.getById("button_pause_play").className="button pause";
+                    changeBgColors("#336699","");
+                    changeColors("black","white");
                 }
                 $.show("btns");
                 $.hide("div_time_log");
                 $.hide("div_timer");
                 $.show("div_time_rule");
-                $.getById("button_pause_play").className="button pause";
-                //$.setBgImg("default.png");
-                $.setBodyBg("#336699");
-                $.setBg("btn_timebar","#336699");
-                $.setBg("div_logo","#336699");
-                $.getById("label_color").innerHTML="";
             }
             function startCustomizedTimer(){
                 startTimer(document.getElementById("tx_green_minute").value,
