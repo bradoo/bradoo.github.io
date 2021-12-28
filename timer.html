@@ -13,7 +13,6 @@
                 background:#336699;
                 box-sizing: border-box;
                 height: 20px;
-                cursor: pointer;
                 border-color: transparent transparent transparent #202020;
                 transition: 100ms all ease;
                 will-change: border-width;
@@ -31,7 +30,6 @@
                 border-color: transparent transparent transparent #404040;
             }
             .action_button{
-                cursor: pointer;
                 height:10%;
                 font-size:15pt;
                 display: block;
@@ -90,6 +88,9 @@
                 border-width:23px; 
                 margin:5% 3% 3% 3%;
                 width:87.5%;
+            }
+            button {
+                cursor: pointer;
             }
         </style>
         <script>
@@ -311,8 +312,8 @@
                 
             }
             function resize(){
-                console.log("resize() height="+window.innerHeight);
-                $.getById("div_frame").style.height=window.innerHeight*0.78+"px";
+                console.log("resize() height="+window.outerHeight);
+                $.getById("div_frame").style.height=window.outerHeight*0.73+"px";
                 $.getById("div_logo").style.top="4%";
             }
             function collapseOrExpand(){
@@ -340,18 +341,18 @@
                     <li>Jack</li>
                 </ul>
             </div>
-            <div id="btns" style="margin-top:4%;width:100%;margin-left:5%">
-                <div style="font-size:5%;width:100%;float:left;">
+            <div id="btns" style="margin-top:6%;width:100%;margin-left:5%">
+                <div style="font-size:5%;width:90%;float:left;">
                     <p>
                         <label>Step 1: Enter the speaker Name:</label>
                         <input type="text" id="tx_speaker_name" holder="speaker name" class="tx_speaker" onkeydown="popupSpeakerList(this)"/>
                     </p>
                 </div>
-                <div style="float:left;width:100%;" id="div_start_buttons">
+                <div style="float:left;width:90%;" id="div_start_buttons">
                     <p>
                         <label>Step 2: Start the regular timer: </label>
                     </p>
-                    <div style="width:90%;margin-left:5%">
+                    <div style="width:90%;margin-left:12%">
                         <script>
                             for(var i=0;i<data.length;i++){
                                 document.write("<div style=\"float:left\">");
@@ -361,12 +362,12 @@
                         </script>
                     </div>
                 </div>
-                <div style="float:left;width:100%;" id="p_customize_header">
+                <div style="float:left;width:90%;" id="p_customize_header">
                     <p><label><a href="#" onclick="collapseOrExpand()">Step 3: Customize the regular timer: </a></label></p>
                 </div>
                 <div id="div_customize_section" style="display:none">
                     <div style="float:left;width:90%;">
-                        <div style="margin-left:5%;float:left;">
+                        <div style="margin-left:12%;float:left;">
                             <script>
                                 for(var i=0;i<data.length;i++){
                                     document.write("<div style=\"float:left\">");
@@ -383,7 +384,7 @@
                         </p>
                         <p>
                             <label>Step 3.2: Set time rule:</label>
-                            <button onclick="startCustomizedTimer()" style="background:grey;color:aliceblue;height:40px;font-size:20px;cursor:pointer;" id="btn-ps">Start the Customized Timer</button>
+                            <button onclick="startCustomizedTimer()" style="background:grey;color:aliceblue;height:40px;font-size:20px;" id="btn-ps">Start the Customized Timer</button>
                         </p>
                         <div>
                             <p>
@@ -397,7 +398,7 @@
                 </div>
                 <div style="float:left;width:100%;" id="div_check_time_log"> 
                     <p>
-                        <button onclick="showLogOnly()" style="width:78%;font-size:15pt;height:30pt;cursor: pointer;">Check the time log</button>
+                        <button onclick="showLogOnly()" style="width:83%;font-size:15pt;height:30pt;">Check the time log</button>
                     </p>
                 </div>
             </div>
@@ -408,7 +409,7 @@
                 <div style="width:97%;float:left"><button id="btn_timebar" class="btn_timebar" onclick="stopTimer()"></button></div>
             </div>
             <div id="div_time_log" style="align-content:center;width:90%;display:none;float:left;margin-left:5%;">
-                <h1 style="color:aliceblue;margin-left:15%">
+                <h1 style="color:aliceblue;margin-left:20%">
                 <script>
                     document.write(new Date());
                 </script>
