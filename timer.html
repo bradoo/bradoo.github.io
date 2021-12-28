@@ -4,7 +4,8 @@
         <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
         <style>
             body {
-              background-image: url(default.png);
+              #background-image: url(default.png);
+              background:#336699;
               background-repeat: no-repeat;
               background-attachment: fixed;
               background-size: 100% 100%;
@@ -72,6 +73,17 @@
             p{
                 margin-left:15%;
             }
+            .div_frame{
+                z-index:1;
+                border-bottom-color:lightgrey;
+                border-left-color:grey;
+                border-right-color:grey;
+                border-top-color:black;
+                border-style:solid;
+                border-width:30px; 
+                margin:5% 3% 3% 3%;
+                height:650px;
+            }
         </style>
         <script>
             var myInterval;
@@ -91,6 +103,8 @@
                         document.getElementById(id).style.background=bg;
                     },setBgImg:function(img){
                         document.body.style["background-image"]="url("+img+")"
+                    },setBodyBg:function(color){
+                        document.body.style["background"]=color;
                     }
                   };
             function myTimer(){
@@ -104,20 +118,25 @@
                 switch(currentMinuteFloat){
                     case parseFloat($.getById("tx_green_minute").value):
                         console.log("myTimer() turn green greenMinutes="+$.getById("tx_green_minute").value);
-                        $.setBgImg("green1.jpeg");
+                        //$.setBgImg("green1.jpeg");
+                        $.setBodyBg("#00CC33");
                         $.setBg("btn_timebar","#00CC33");
+                        $.getById("label_color").innerHTML="GREEN";
                         break;
                     case parseFloat($.getById("tx_yellow_minute").value):
                         console.log("myTimer() turn yellow yellowMinutes="+$.getById("tx_yellow_minute").value);
-                        $.setBgImg("yellow1.jpeg");
+                        //$.setBgImg("yellow1.jpeg");
+                        $.setBodyBg("yellow");
                         $.setBg("btn_timebar","yellow");
+                        $.getById("label_color").innerHTML="YELLOW";
                         break;
                     case parseFloat($.getById("tx_red_minute").value):
                         console.log("myTimer() turn red redMinutes="+$.getById("tx_red_minute").value);
-                        $.setBgImg("red1.jpeg");
+                        //$.setBgImg("red1.jpeg");
+                        $.setBodyBg("#FF0033");
                         $.setBg("btn_timebar","#FF0033");
+                        $.getById("label_color").innerHTML="RED";
                         break;
-
                 }
                 var threshholdMinutes=parseFloat($.getById("tx_threshhold_minute").value);
                 console.log("myTimer() threshholdMinutes="+threshholdMinutes);
@@ -126,10 +145,12 @@
                     $.getById("ebd_bell_ring").play()
                     console.log("myTimer() background="+$.getById("btn_timebar").style.background);
                     if($.getById("btn_timebar").style.background=="rgb(255, 0, 51) none repeat scroll 0% 0%"){
-                        $.setBgImg("yellow1.jpeg");
+                        //$.setBgImg("yellow1.jpeg");
+                        $.setBodyBg("#990099");
                         $.setBg("btn_timebar","#990099");
                     }else{
-                        $.setBgImg("red1.jpeg");
+                        //$.setBgImg("red1.jpeg");
+                        $.setBodyBg("#FF0033");
                         $.setBg("btn_timebar","#FF0033");
                     }
                 }
@@ -178,32 +199,36 @@
                     myInterval=setInterval(myTimer,intervalMiliSec);
             }
             function stopTimer(){
-                var currentDate=new Date();
-                endTime=currentDate.getHours()+":"+currentDate.getMinutes()+":"+currentDate.getSeconds();
-                console.log("stopTimer() "+(new Date())+"myInterval="+myInterval);
-                console.log("stopTimer() "+speechType);
-                $.getById("btn_timebar").style.width="0%";
-                var newLog = document.createElement("LI");
-                var currentMinutes=currentSecond/60;
-                var threshhold=parseFloat($.getById("tx_threshhold_minute").value);
-                var ifOverTime=currentMinutes>threshhold;
-                newLog.innerHTML=(ifOverTime?"<font color=\"red\">":"")+
-                    $.getById("tx_speech_type").value+" "+
-                    speakerName+" : ["+startTime+" - "+endTime+"]-("+$.getById("tx_red_minute").value+
-                    ")-["+$.getById("div_main_content").innerHTML+"]"+
-                    (ifOverTime?"</font>":"");
-                $.getById("ol_time_log").appendChild(newLog);
-                currentSecond=0;
-                $.getById("btn_timebar").value=0;
-                $.getById("div_main_content").innerHTML="00:00";
-                clearInterval(myInterval);
+                if($.getById("div_main_content").innerHTML!="00:00"){   
+                    var currentDate=new Date();
+                    endTime=currentDate.getHours()+":"+currentDate.getMinutes()+":"+currentDate.getSeconds();
+                    console.log("stopTimer() "+(new Date())+"myInterval="+myInterval);
+                    console.log("stopTimer() "+speechType);
+                    $.getById("btn_timebar").style.width="0%";
+                    var newLog = document.createElement("LI");
+                    var currentMinutes=currentSecond/60;
+                    var threshhold=parseFloat($.getById("tx_threshhold_minute").value);
+                    var ifOverTime=currentMinutes>threshhold;
+                    newLog.innerHTML=(ifOverTime?"<font color=\"red\">":"")+
+                        $.getById("tx_speech_type").value+" "+
+                        speakerName+" : ["+startTime+" - "+endTime+"]-("+$.getById("tx_green_minute").value+"-"+$.getById("tx_red_minute").value+
+                        ")-["+$.getById("div_main_content").innerHTML+"]"+
+                        (ifOverTime?"</font>":"");
+                    $.getById("ol_time_log").appendChild(newLog);
+                    currentSecond=0;
+                    $.getById("btn_timebar").value=0;
+                    $.getById("div_main_content").innerHTML="00:00";
+                    clearInterval(myInterval);
+                }
                 $.show("btns");
                 $.hide("div_time_log");
                 $.hide("div_timer");
                 $.show("div_time_rule");
                 $.getById("button_pause_play").className="button pause";
-                $.setBgImg("default.png");
+                //$.setBgImg("default.png");
+                $.setBodyBg("#336699");
                 $.setBg("btn_timebar","#336699");
+                $.getById("label_color").innerHTML="";
             }
             function startCustomizedTimer(){
                 startTimer(document.getElementById("tx_green_minute").value,
@@ -252,9 +277,16 @@
         </script>
     </head>
     <body>
+        <div style="margin-left:25%;margin-top:3.5%;z-index:100;position:absolute;top:3%;">
+            <label id="label_color"></label>
+        </div>
+        <div style="margin-left:10%;margin-top:0px;z-index:200;position:absolute;top:3%;">
+            <a href="#" onclick="stopTimer()"><img src="toastmasters-logo@2x.png" width="50%"/></a>
+        </div>
         <audio id="ebd_bell_ring">
           <source src="mixkit-home-standard-ding-dong-109.wav" type="audio/wav">
         </audio>
+        <div id="div_frame" class="div_frame">
         <div id="speaker_list" style="z-index:2;position:absolute;display:none;background:white;color:black;" onfocus="hideMe(this)">
             <ul style="z-index:3">
                 <li style="z-index:4">Brad</li>
@@ -262,7 +294,7 @@
             </ul>
         </div>
         <div id="btns">
-            <div style="z-index:1;font-size:15pt;width:90%;float:left;margin-top:10%;margin-left:10%;margin-right:15%">
+            <div style="z-index:1;font-size:15pt;width:90%;float:left;margin-left:10%;margin-right:15%">
                 <p>
                     <label>Step 1: Enter the speaker Name:</label>
                     <input type="text" id="tx_speaker_name" holder="speaker name" class="tx_input" onkeydown="popupSpeakerList(this)"/>
@@ -270,7 +302,7 @@
                 <p>
                     <label>Step 2: Select the speech type: </label>
                 </p>
-                <div style="width:60%;margin-left:15%;float:left;">
+                <div style="margin-left:15%;float:left;">
                     <script>
                         for(var i=0;i<data.length;i++){
                             document.write("<div style=\"float:left\">");
@@ -317,26 +349,25 @@
                  <p>
                     <label>Step 5: Check time log</label>
                 </p>
-                <div style="width:60%;margin-left:15%;">
+                <div style="margin-left:15%;">
                     <button onclick="showLogOnly()" class="action_button">Time Log</button>
                 </div>
             </div>
         </div>
-        <div id="div_timer" style="width:90%;display:none;float:left;margin-top:14%;margin-left:5%;">
+        <div id="div_timer" style="width:90%;display:none;float:left;margin-left:5%;margin-top:10%;">
             <label id="h1_speaker" style="width:50%;float:left;margin-left:30%">Brad is speaking...</label>
-            <a href="#" onclick="stopTimer()"><font color="white" size="20pt">&#8635;</font></a>
             <div onclick="pauseTimer()" ondblclick="stopTimer()" id="div_main_content" class="div_main_content">00:00</div>
             <div style="width:3%;float:left;align-content: center;"><button onclick="pauseTimer()" class="button pause" id="button_pause_play"></button></div>
             <div style="width:97%;float:left"><button id="btn_timebar" class="btn_timebar"></button></div>
         </div>
-        <div id="div_time_log" style="align-content:center;width:90%;display:none;float:left;margin-left:10%;margin-top:10%">
-            <a href="#" onclick="backToMain()"><font color="white" size="20pt">&#8634;</font></a>
+        <div id="div_time_log" style="align-content:center;width:90%;display:none;float:left;margin-left:16%;">
             <h1 style="color:aliceblue">
             <script>
                 document.write(new Date());
             </script>
             </h1>
             <ol id="ol_time_log" style="float:left;"></ol>
+        </div>
         </div>
     </body>
 </html> 
