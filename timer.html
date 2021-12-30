@@ -317,10 +317,23 @@
                 $.getById("div_logo").style.top="4%";
             }
             function collapseOrExpand(){
-                if($.getById("div_customize_section").style.display=="none")
+                if($.getById("div_customize_section").style.display=="none"){
+                    $.hide("div_regular_timers");
                     $.show("div_customize_section");
-                else
+                }
+                else{
+                    $.show("div_regular_timers");
                     $.hide("div_customize_section");
+                }
+            }
+            function collapseOrExpand2(){
+                if($.getById("div_regular_timers").style.display=="none"){
+                    $.hide("div_customize_section");
+                    $.show("div_regular_timers");
+                }else{
+                    $.hide("div_regular_timers");
+                    $.show("div_customize_section");
+                }
             }
         </script>
     </head>
@@ -350,9 +363,9 @@
                 </div>
                 <div style="float:left;width:90%;" id="div_start_buttons">
                     <p>
-                        <label>Step 2: Start the regular timer: </label>
+                        <label><a href="#" onclick="collapseOrExpand2()">Step 2: Start the regular timer: </label></a>
                     </p>
-                    <div style="width:90%;margin-left:12%">
+                    <div style="width:90%;margin-left:12%" id="div_regular_timers">
                         <script>
                             for(var i=0;i<data.length;i++){
                                 document.write("<div style=\"float:left\">");
@@ -383,7 +396,7 @@
                             <label>Step 3.1: Enter the customized speech type:</label><input type="text" id="tx_speech_type" class="tx_speaker"/>
                         </p>
                         <p>
-                            <label>Step 3.2: Set time rule:</label>
+                            <label>Step 3.2: Set time rule & start the timer:</label>
                             <button onclick="startCustomizedTimer()" style="background:grey;color:aliceblue;height:40px;font-size:20px;" id="btn-ps">Start the Customized Timer</button>
                         </p>
                         <div>
