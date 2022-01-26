@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="initial-scale=1, minimum-scale=1, width=device-width" name="viewport">
+    <title>Google - Site Reliability Engineering</title>
+    <meta name="referrer" content="no-referrer" />
+    <link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://lh3.googleusercontent.com/Yf2DCX8RKda6r4Jml9DLMByS2zQCBFs3kQpvBfN8UgIh4YVWIYSYIQOoTxJriyuM26cT5PDjyEb5aynDQ0Xyz46yHKnfg8JlUbDW">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Google+Sans:400|Roboto:400,400italic,500,500italic,700,700italic|Roboto+Mono:400,500,700|Material+Icons">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://lh3.googleusercontent.com/Yf2DCX8RKda6r4Jml9DLMByS2zQCBFs3kQpvBfN8UgIh4YVWIYSYIQOoTxJriyuM26cT5PDjyEb5aynDQ0Xyz46yHKnfg8JlUbDW">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://lh3.googleusercontent.com/Yf2DCX8RKda6r4Jml9DLMByS2zQCBFs3kQpvBfN8UgIh4YVWIYSYIQOoTxJriyuM26cT5PDjyEb5aynDQ0Xyz46yHKnfg8JlUbDW">
+    <link rel="shortcut icon" href="https://lh3.googleusercontent.com/Yf2DCX8RKda6r4Jml9DLMByS2zQCBFs3kQpvBfN8UgIh4YVWIYSYIQOoTxJriyuM26cT5PDjyEb5aynDQ0Xyz46yHKnfg8JlUbDW">
+    <link href="/sre-book/static/css/index.min.css?cache=06bf08c" rel="stylesheet">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-75468017-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+    <script src="/sre-book/static/js/detect.min.js?cache=4cb778b"></script>
+  </head>
+
+  <body>
+    <main>
+  <div ng-controller= "HeaderCtrl as headerCtrl">
+    <div id="curtain" class="menu-closed"></div>
+      <div class="header clearfix">
+        <a id="burger-menu" class="expand"></a>
+        <h2 class="chapter-title">
+                Preface
+        </h2>
+      </div>
+      <div id="overlay-element" class="expands">
+        <div class="logo">
+          <a href="https://www.google.com"><img src="https://lh3.googleusercontent.com/YoVRtLOHMSRYQZ3OhFL8RIamcjFYbmQXX4oAQx02MRqqY9zlKNvsuZpS73khXiOqTH3qrFW27VrERJJIHTjPk-tAh46q8-Fd4w6qlw" alt="Google"></a>
+        </div>
+        <ol id="drop-down" class="dropdown-content hide">
+          <li><a class="menu-buttons" href="/sre-book/table-of-contents/">Table of Contents</a></li>
+            <li>
+              <a href="/sre-book/foreword/" class="menu-buttons">
+                  Foreword
+              </a>
+            </li>
+            <li class="active">
+              <a href="/sre-book/preface/" class="menu-buttons">
+                  Preface
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/part-I-introduction/" class="menu-buttons">
+                  Part I - Introduction
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/introduction/" class="menu-buttons">
+                  1. Introduction
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/production-environment/" class="menu-buttons">
+                  2. The Production Environment at Google, from the Viewpoint of an SRE
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/part-II-principles/" class="menu-buttons">
+                  Part II - Principles
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/embracing-risk/" class="menu-buttons">
+                  3. Embracing Risk
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/service-level-objectives/" class="menu-buttons">
+                  4. Service Level Objectives
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/eliminating-toil/" class="menu-buttons">
+                  5. Eliminating Toil
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/monitoring-distributed-systems/" class="menu-buttons">
+                  6. Monitoring Distributed Systems
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/automation-at-google/" class="menu-buttons">
+                  7. The Evolution of Automation at Google
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/release-engineering/" class="menu-buttons">
+                  8. Release Engineering
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/simplicity/" class="menu-buttons">
+                  9. Simplicity
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/part-III-practices/" class="menu-buttons">
+                  Part III - Practices
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/practical-alerting/" class="menu-buttons">
+                  10. Practical Alerting
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/being-on-call/" class="menu-buttons">
+                  11. Being On-Call
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/effective-troubleshooting/" class="menu-buttons">
+                  12. Effective Troubleshooting
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/emergency-response/" class="menu-buttons">
+                  13. Emergency Response
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/managing-incidents/" class="menu-buttons">
+                  14. Managing Incidents
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/postmortem-culture/" class="menu-buttons">
+                  15. Postmortem Culture: Learning from Failure
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/tracking-outages/" class="menu-buttons">
+                  16. Tracking Outages
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/testing-reliability/" class="menu-buttons">
+                  17. Testing for Reliability
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/software-engineering-in-sre/" class="menu-buttons">
+                  18. Software Engineering in SRE
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/load-balancing-frontend/" class="menu-buttons">
+                  19. Load Balancing at the Frontend
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/load-balancing-datacenter/" class="menu-buttons">
+                  20. Load Balancing in the Datacenter
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/handling-overload/" class="menu-buttons">
+                  21. Handling Overload
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/addressing-cascading-failures/" class="menu-buttons">
+                  22. Addressing Cascading Failures
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/managing-critical-state/" class="menu-buttons">
+                  23. Managing Critical State: Distributed Consensus for Reliability
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/distributed-periodic-scheduling/" class="menu-buttons">
+                  24. Distributed Periodic Scheduling with Cron
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/data-processing-pipelines/" class="menu-buttons">
+                  25. Data Processing Pipelines
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/data-integrity/" class="menu-buttons">
+                  26. Data Integrity: What You Read Is What You Wrote
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/reliable-product-launches/" class="menu-buttons">
+                  27. Reliable Product Launches at Scale
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/part-IV-management/" class="menu-buttons">
+                  Part IV - Management
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/accelerating-sre-on-call/" class="menu-buttons">
+                  28. Accelerating SREs to On-Call and Beyond
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/dealing-with-interrupts/" class="menu-buttons">
+                  29. Dealing with Interrupts
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/operational-overload/" class="menu-buttons">
+                  30. Embedding an SRE to Recover from Operational Overload
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/communication-and-collaboration/" class="menu-buttons">
+                  31. Communication and Collaboration in SRE
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/evolving-sre-engagement-model/" class="menu-buttons">
+                  32. The Evolving SRE Engagement Model
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/part-V-conclusions/" class="menu-buttons">
+                  Part V - Conclusions
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/lessons-learned/" class="menu-buttons">
+                  33. Lessons Learned from Other Industries
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/conclusion/" class="menu-buttons">
+                  34. Conclusion
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/availability-table/" class="menu-buttons">
+                  Appendix A. Availability Table
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/service-best-practices/" class="menu-buttons">
+                  Appendix B. A Collection of Best Practices for Production Services
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/incident-document/" class="menu-buttons">
+                  Appendix C. Example Incident State Document
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/example-postmortem/" class="menu-buttons">
+                  Appendix D. Example Postmortem
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/launch-checklist/" class="menu-buttons">
+                  Appendix E. Launch Coordination Checklist
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/production-meeting/" class="menu-buttons">
+                  Appendix F. Example Production Meeting Minutes
+              </a>
+            </li>
+            <li>
+              <a href="/sre-book/bibliography/" class="menu-buttons">
+                  Bibliography
+              </a>
+            </li>
+        </ol>
+      </div>
+    </div>
+
+  <div id="maia-main" role="main">
+    <div class="content" id="content">
+      <section data-type="preface" id="chapter_preface">
+<h1 class="heading jumptargets">Preface</h1>
+
+<p>Software engineering has this in common with having children: the labor <em>before</em> the birth is painful and difficult, but the labor <em>after</em> the birth is where you actually spend most of your effort. Yet software engineering as a discipline spends much more time talking about the first period as opposed to the second, despite estimates that 40–90% of the total costs of a system are incurred after birth.<sup><a class="jumptarget" data-type="noteref" id="id-p8BuwtjFz-marker" href="#id-p8BuwtjFz">1</a></sup> The popular industry model that conceives of deployed, operational software as being “stabilized” in production, and therefore needing much less attention from software engineers, is wrong. Through this lens, then, we see that if software engineering tends to focus on designing and building software systems, there must be another discipline that focuses on the <em>whole</em> lifecycle of software objects, from inception, through deployment and operation, refinement, and eventual peaceful decommissioning. This discipline uses—and needs to use—a wide range of skills, but has separate concerns from other kinds of engineers. Today, our answer is the discipline Google calls Site Reliability Engineering.</p>
+
+<p>So what exactly is Site Reliability Engineering (SRE)? We admit that it’s not a particularly clear name for what we do—pretty much every site reliability engineer at Google gets asked what exactly that is, and what they actually do, on a regular basis.</p>
+
+<p>Unpacking the term a little, first and foremost, SREs are <em>engineers</em>. We apply the principles of computer science and engineering to the design and development of computing systems: generally, large distributed ones. Sometimes, our task is writing the software for those systems alongside our product development counterparts; sometimes, our task is building all the additional pieces those systems need, like backups or load balancing, ideally so they can be reused across systems; and sometimes, our task is figuring out how to apply existing solutions to new problems.</p>
+
+<p>Next, we focus on system <em>reliability</em>. Ben Treynor Sloss, Google’s VP for 24/7 Operations, originator of the term SRE, claims that reliability is the most fundamental feature of any product: a system isn’t very useful if nobody can use it! Because reliability<sup><a class="jumptarget" data-type="noteref" id="id-gA2u2Iyh4-marker" href="#id-gA2u2Iyh4">2</a></sup> is so critical, SREs are focused on finding ways to improve the design and operation of systems to make them more scalable, more reliable, and more efficient. However, we expend effort in this direction only up to a point: when systems are “reliable enough,” we instead invest our efforts in adding features or building new products.<sup><a class="jumptarget" data-type="noteref" id="id-qpMuvtVhy-marker" href="#id-qpMuvtVhy">3</a></sup></p>
+
+<p>Finally, SREs are focused on operating <em>services</em> built atop our distributed computing systems, whether those services are planet-scale storage, email for hundreds of millions of users, or where Google began, web search. The “site” in our name originally referred to SRE’s role in keeping the <em>google.com</em> website running, though we now run many more services, many of which aren’t themselves websites—from internal infrastructure such as Bigtable to products for external developers such as the Google Cloud Platform.</p>
+
+<p>Although we have represented SRE as a broad discipline, it is no surprise that it arose in the fast-moving world of web services, and perhaps in origin owes something to the peculiarities of our infrastructure. It is equally no surprise that of all the post-deployment characteristics of software that we could choose to devote special attention to, reliability is the one we regard as primary.<sup><a class="jumptarget" data-type="noteref" id="id-qpMuAFAcy-marker" href="#id-qpMuAFAcy">4</a></sup> The domain of web services, both because the process of improving and changing server-side software is comparatively contained, and because managing change itself is so tightly coupled with failures of all kinds, is a natural platform from which our approach might emerge.</p>
+
+<p>Despite arising at Google, and in the web community more generally, we think that this discipline has lessons applicable to other communities and other organizations. This book is an attempt to explain how we do things: both so that other organizations might make use of what we’ve learned, and so that we can better define the role and what the term means. To that end, we have organized the book so that general principles and more specific practices are separated where possible, and where it’s appropriate to discuss a particular topic with Google-specific information, we trust that the reader will indulge us in this and will not be afraid to draw useful conclusions about their own environment.</p>
+
+<p class="pagebreak-before">We have also provided some orienting material—a description of Google’s production environment and a mapping between some of our internal software and publicly available software—which should help to contextualize what we are saying and make it more directly usable.</p>
+
+<p>Ultimately, of course, more reliability-oriented software and systems engineering is inherently good. However, we acknowledge that smaller organizations may be wondering how they can best use the experience represented here: much like security, the earlier you care about reliability, the better. This implies that even though a small organization has many pressing concerns and the software choices you make may differ from those Google made, it’s still worth putting lightweight reliability support in place early on, because it’s less costly to expand a structure later on than it is to introduce one that is not present. <a data-type="xref" href="/sre-book/part-IV-management/">Management</a> contains a number of best practices for training, communication, and meetings that we’ve found to work well for us, many of which should be immediately usable by your organization.</p>
+
+<p>But for sizes between a startup and a multinational, there probably already is someone in your organization who is doing SRE work, without it necessarily being called that name, or recognized as such. Another way to get started on the path to improving reliability for your organization is to formally recognize that work, or to find these people and foster what they do—reward it. They are people who stand on the cusp between one way of looking at the world and another one: like Newton, who is sometimes called not the world’s first physicist, but the world’s last alchemist.</p>
+
+<p>And taking the historical view, who, then, looking back, might be the first SRE?</p>
+
+<p>We like to think that Margaret Hamilton, working on the Apollo program on loan from MIT, had all of the significant traits of the first SRE.<sup><a class="jumptarget" data-type="noteref" id="id-na2u1SWHw-marker" href="#id-na2u1SWHw">5</a></sup> In her own words, "part of the culture was to learn from everyone and everything, including from that which one would least expect."</p>
+
+<p>A case in point was when her young daughter Lauren came to work with her one day, while some of the team were running mission scenarios on the hybrid simulation computer. As young children do, Lauren went exploring, and she caused a "mission" to crash by selecting the DSKY keys in an unexpected way, alerting the team as to what would happen if the prelaunch program, P01, were inadvertently selected by a real astronaut during a real mission, during real midcourse. (Launching P01 inadvertently on a real mission would be a major problem, because it wipes out navigation data, and the computer was not equipped to pilot the craft with no navigation data.)</p>
+
+<p class="pagebreak-before">With an SRE’s instincts, Margaret submitted a program change request to add special error checking code in the on­board flight software in case an astronaut should, by accident, happen to select P01 during flight. But this move was considered unnecessary by the "higher-ups" at NASA: of course, that could never happen! So instead of adding error checking code, Margaret updated the mission specifications documentation to say the equivalent of "Do not select P01 during flight." (Apparently the update was amusing to many on the project, who had been told many times that astronauts would not make any mistakes—after all, they were trained to be perfect.)</p>
+
+<p>Well, Margaret’s suggested safeguard was only considered unnecessary until the very next mission, on Apollo 8, just days after the specifications update. During midcourse on the fourth day of flight with the astronauts Jim Lovell, William Anders, and Frank Borman on board, Jim Lovell selected P01 by mistake—as it happens, on Christmas Day—creating much havoc for all involved. This was a critical problem, because in the absence of a workaround, no navigation data meant the astronauts were never coming home. Thankfully, the documentation update had explicitly called this possibility out, and was invaluable in figuring out how to upload usable data and recover the mission, with not much time to spare.</p>
+
+<p>As Margaret says, "a thorough understanding of how to operate the systems was not enough to prevent human errors," and the change request to add error detection and recovery software to the prelaunch program P01 was approved shortly afterwards.</p>
+
+<p>Although the Apollo 8 incident occurred decades ago, there is much in the preceding paragraphs directly relevant to engineers’ lives today, and much that will continue to be directly relevant in the future. Accordingly, for the systems you look after, for the groups you work in, or for the organizations you’re building, please bear the SRE Way in mind: thoroughness and dedication, belief in the value of preparation and documentation, and an awareness of what could go wrong, coupled with a strong desire to prevent it. Welcome to our emerging profession!</p>
+
+<aside data-type="sidebar" class="highlight pagebreak-before" id="how-to-read-this-book-nkSOhM">
+  <h5 class="heading jumptargets">How to Read This Book</h5>
+  <p>This book is a series of essays written by members and alumni of Google’s Site Reliability Engineering organization. It’s much more like conference proceedings than it is like a standard book by an author or a small number of authors. Each chapter is intended to be read as a part of a coherent whole, but a good deal can be gained by reading on whatever subject particularly interests you. (If there are other articles that support or inform the text, we reference them so you can follow up accordingly.)</p>
+  <p>You don’t need to read in any particular order, though we’d suggest at least starting with Chapters <a data-type="xref" href="/sre-book/production-environment/
+" data-xrefstyle="select:labelnumber">The Production Environment at Google, from the Viewpoint of an SRE</a> and <a data-type="xref" href="/sre-book/embracing-risk/" data-xrefstyle="select:labelnumber">Embracing Risk</a>, which describe Google’s production environment and outline how SRE approaches risk, respectively. (Risk is, in many ways, the key quality of our profession.) Reading cover-to-cover is, of course, also useful and possible; our chapters are grouped thematically, into Principles (<a data-type="xref" href="/sre-book/part-II-principles/">Principles</a>), Practices (<a data-type="xref" href="/sre-book/part-III-practices/">Practices</a>), and Management (<a data-type="xref" href="/sre-book/part-IV-management/">Management</a>). Each has a small introduction that highlights what the individual pieces are about, and references other articles published by Google SREs, covering specific topics in more detail. Additionally, the companion website to this book, <a href="https://g.co/SREBook"><em class="hyperlink">https://g.co/SREBook</em></a>, has a number of helpful resources.</p>
+  <p>We hope this will be at least as useful and interesting to you as putting it together was for us.</p>
+  <p class="right"> — The Editors</p>
+</aside>
+
+<section data-type="sect1" id="conventions-used-in-this-book-vJs2T9">
+  <h1 class="heading jumptargets">Conventions Used in This Book</h1>
+  <p>The following typographical conventions are used in this book:</p>
+  <dl class="desc-list">
+    <dt id="italic" class="dt-heading italic">Italic</dt>
+    <dd class="italic">Indicates new terms, URLs, email addresses, filenames, and file extensions.</dd>
+    <dt class="dt-heading" id="constant-width"><code>Constant width</code></dt>
+    <dd>Used for program listings, as well as within paragraphs to refer to program elements such as variable or function names, databases, data types, environment variables, statements, and keywords.</dd>
+    <dt class="dt-heading" id="constant-width-bold"><code><strong>Constant width bold</strong></code></dt>
+    <dd>Shows commands or other text that should be typed literally by the user.</dd>
+    <dt class="dt-heading italic" id="constant-width-italic"><em><code class="italic">Constant width italic</code></em></dt>
+    <dd class="italic">Shows text that should be replaced with user-supplied values or by values determined by context.</dd>
+  </dl>
+  <div data-type="tip" id="id-VoU2tKTb">
+    <h6 class="subheaders jumptargets">Tip</h6>
+    <p>This element signifies a tip or suggestion.</p>
+  </div>
+  <div data-type="note" id="id-rrUZhZTw">
+    <h6 class="subheaders jumptargets">Note</h6>
+    <p>This element signifies a general note.</p>
+  </div>
+  <div data-type="warning" id="id-wXUvTOTg">
+    <h6 class="subheaders jumptargets">Warning</h6>
+    <p>This element indicates a warning or caution.</p>
+  </div>
+</section>
+
+<section data-type="sect1" id="using-code-examples-lqsLc1">
+  <h1 class="heading jumptargets">Using Code Examples</h1>
+  <!--PROD: Please reach out to author to find out if they will be uploading code examples to oreilly.com or their own site (e.g., GitHub). If there is no code download, delete this whole section. If there is, when you email digidist with the link, let them know what you filled in for title_title (should be as close to book title as possible, i.e., learning_python_2e). This info will determine where digidist loads the files.-->
+  <p>Supplemental material is available at <a href="https://g.co/SREBook"><em class="hyperlink">https://g.co/SREBook</em></a>.</p>
+  <p>This book is here to help you get your job done. In general, if example code is offered with this book, you may use it in your programs and documentation. You do not need to contact us for permission unless you’re reproducing a significant portion of the code. For example, writing a program that uses several chunks of code from this book does not require permission. Selling or distributing a CD-ROM of examples from O’Reilly books does require permission. Answering a question by citing this book and quoting example code does not require permission. Incorporating a significant amount of example code from this book into your product’s documentation does require permission.</p>
+  <p>We appreciate, but do not require, attribution. An attribution usually includes the title, author, publisher, and ISBN. For example: “<em>Site Reliability Engineering</em>, edited by Betsy Beyer, Chris Jones, Jennifer Petoff, and Niall Richard Murphy (O’Reilly). Copyright 2016 Google, Inc., 978-1-491-92912-4.”</p>
+  <p>If you feel your use of code examples falls outside fair use or the permission given above, feel free to contact us at <a class="email" href="mailto:permissions@oreilly.com"><em>permissions@oreilly.com</em></a>.</p>
+</section>
+
+<section data-type="sect1" id="safarir-books-online-nqsyiM">
+  <h1 class="heading jumptargets">Safari® Books Online</h1>
+  <div data-type="note" class="safarienabled" id="id-VoUpFGib">
+  <h6 class="subheaders jumptargets">Note</h6>
+    <p><a href="https://safaribooksonline.com" class="orm:hideurl:ital" rel="noopener noreferrer"><em class="hyperlink">Safari Books Online</em></a> is an on-demand digital library that delivers expert <a href="https://www.safaribooksonline.com/explore/" class="orm:hideurl" rel="noopener noreferrer">content</a> in both book and video form from the world’s leading authors in technology and business.</p>
+  </div>
+  <p>Technology professionals, software developers, web designers, and business and creative professionals use Safari Books Online as their primary resource for research, problem solving, learning, and certification training.</p>
+  <p>Safari Books Online offers a range of <a href="https://www.safaribooksonline.com/pricing/" class="orm:hideurl" rel="noopener noreferrer">plans and pricing</a> for <a href="https://www.safaribooksonline.com/enterprise/" class="orm:hideurl" rel="noopener noreferrer">enterprise</a>, <a href="https://www.safaribooksonline.com/government/" class="orm:hideurl" rel="noopener noreferrer">government</a>, <a href="https://learning.oreilly.com/" class="orm:hideurl" rel="noopener noreferrer">education</a>, and individuals.</p>
+  <p>Members have access to thousands of books, training videos, and prepublication manuscripts in one fully searchable database from publishers like O’Reilly Media, Prentice Hall Professional, Addison-Wesley Professional, Microsoft Press, Sams, Que, Peachpit Press, Focal Press, Cisco Press, John Wiley &amp; Sons, Syngress, Morgan Kaufmann, IBM Redbooks, Packt, Adobe Press, FT Press, Apress, Manning, New Riders, McGraw-Hill, Jones &amp; Bartlett, Course Technology, and hundreds <a href="https://learning.oreilly.com/" class="orm:hideurl" rel="noopener noreferrer">more</a>. For more information about Safari Books Online, please visit us <a class="orm:hideurl" href="https://safaribooksonline.com" rel="noopener noreferrer">online</a>.</p>
+</section>
+
+<section data-type="sect1" id="how-to-contact-us-Nbslu0">
+  <h1 class="heading jumptargets">How to Contact Us</h1>
+  <p>Please address comments and questions concerning this book to the publisher:</p>
+  <ul class="simplelist">
+    <li>O’Reilly Media, Inc.</li>
+    <li>1005 Gravenstein Highway North</li>
+    <li>Sebastopol, CA 95472</li>
+    <li>800-998-9938 (in the United States or Canada)</li>
+    <li>707-829-0515 (international or local)</li>
+    <li>707-829-0104 (fax)</li>
+  </ul>
+  <p>We have a web page for this book, where we list errata, examples, and any additional information. You can access this page at <a href="https://bit.ly/site-reliability-engineering" rel="noopener noreferrer"><em class="hyperlink">https://bit.ly/site-reliability-engineering</em></a>.</p>
+  <p>To comment or ask technical questions about this book, send email to <a class="email" href="mailto:bookquestions@oreilly.com"><em>bookquestions@oreilly.com</em></a>.</p>
+  <p>For more information about our books, courses, conferences, and news, see our website at <a href="https://www.oreilly.com" rel="noopener noreferrer"><em class="hyperlink">https://www.oreilly.com</em></a>.</p>
+  <p>Find us on Facebook: <a href="https://facebook.com/oreilly" rel="noopener noreferrer"><em class="hyperlink">https://facebook.com/oreilly</em></a></p>
+  <p>Follow us on Twitter: <a href="https://twitter.com/oreillymedia" rel="noopener noreferrer"><em class="hyperlink">https://twitter.com/oreillymedia</em></a></p>
+  <p>Watch us on YouTube: <a href="https://www.youtube.com/oreillymedia" rel="noopener noreferrer"><em class="hyperlink">https://www.youtube.com/oreillymedia</em></a></p>
+</section>
+
+<section data-type="sect1" id="acknowledgments-8ksNUe">
+  <h1 class="heading jumptargets">Acknowledgments</h1>
+  <p>This book would not have been possible without the tireless efforts of our
+  authors and technical writers. We’d also like thank the following internal reviewers for providing especially valuable feedback: Alex Matey, Dermot Duffy, JC van Winkel, John T. Reese, Michael O’Reilly, Steve Carstensen, and Todd Underwood. Ben Lutch and Ben Treynor Sloss were this book’s sponsors within Google; their belief in this project and sharing what we’ve learned about running large-scale services was essential to making this book happen.</p>
+  <p>We’d like to send special thanks to Rik Farrow, the editor of <em>;login:</em>, for partnering with us on a number of contributions for pre-publication via USENIX.</p>
+  <p>While the authors are specifically acknowledged in each chapter, we’d like to take time to recognize those that contributed to each chapter by providing thoughtful input, discussion, and review.</p>
+  <p><a data-type="xref" href="/sre-book/embracing-risk/">Embracing Risk</a>: Abe Rahey, Ben Treynor Sloss, Brian Stoler, Dave O’Connor, David Besbris, Jill Alvidrez, Mike Curtis, Nancy Chang, Tammy Capistrant, Tom Limoncelli</p>
+  <p><a data-type="xref" href="/sre-book/eliminating-toil/">Eliminating Toil</a>: Cody Smith, George Sadlier, Laurence Berland, Marc Alvidrez, Patrick Stahlberg, Peter Duff, Pim van Pelt, Ryan Anderson, Sabrina Farmer, Seth Hettich</p>
+  <p><a data-type="xref" href="/sre-book/monitoring-distributed-systems/">Monitoring Distributed Systems</a>: Mike Curtis, Jamie Wilkinson, Seth Hettich</p>
+  <p><a data-type="xref" href="/sre-book/release-engineering/">Release Engineering</a>: David Schnur, JT Goldstone, Marc Alvidrez, Marcus Lara-Reinhold, Noah Maxwell, Peter Dinges, Sumitran Raghunathan, Yutong Cho</p>
+  <p><a data-type="xref" href="/sre-book/simplicity/">Simplicity</a>: Ryan Anderson</p>
+  <p><a data-type="xref" href="/sre-book/practical-alerting/">Practical Alerting from Time-Series Data</a>: Jules Anderson, Max Luebbe, Mikel Mcdaniel, Raul Vera, Seth Hettich</p>
+  <p><a data-type="xref" href="/sre-book/being-on-call/">Being On-Call</a>: Andrew Stribblehill, Richard Woodbury</p>
+  <p><a data-type="xref" href="/sre-book/effective-troubleshooting/">Effective Troubleshooting</a>: Charles Stephen Gunn, John Hedditch, Peter Nuttall, Rob Ewaschuk, Sam Greenfield</p>
+  <p><a data-type="xref" href="/sre-book/emergency-response/">Emergency Response</a>: Jelena Oertel, Kripa Krishnan, Sergio Salvi, Tim Craig</p>
+  <p><a data-type="xref" href="/sre-book/managing-incidents/">Managing Incidents</a>: Amy Zhou, Carla Geisser, Grainne Sheerin, Hildo Biersma, Jelena Oertel, Perry Lorier, Rune Kristian Viken</p>
+  <p><a data-type="xref" href="/sre-book/postmortem-culture/">Postmortem Culture: Learning from Failure</a>: Dan Wu, Heather Sherman, Jared Brick, Mike Louer, Štěpán Davidovič, Tim Craig</p>
+  <p><a data-type="xref" href="/sre-book/tracking-outages/">Tracking Outages</a>: Andrew Stribblehill, Richard Woodbury</p>
+  <p><a data-type="xref" href="/sre-book/testing-reliability/">Testing for Reliability</a>: Isaac Clerencia, Marc Alvidrez</p>
+  <p><a data-type="xref" href="/sre-book/software-engineering-in-sre/">Software Engineering in SRE</a>: Ulric Longyear</p>
+  <p><a data-type="xref" href="/sre-book/load-balancing-frontend/">Load Balancing at the Frontend</a>: Debashish Chatterjee, Perry Lorier</p>
+  <p>Chapters <a data-type="xref" href="/sre-book/load-balancing-datacenter/" data-xrefstyle="select:labelnumber">Load Balancing in the Datacenter</a> and <a data-type="xref" href="/sre-book/handling-overload/" data-xrefstyle="select:labelnumber">Handling Overload</a>: Adam Fletcher, Christoph Pfisterer, Lukáš Ježek, Manjot Pahwa, Micha Riser, Noah Fiedel, Pavel Herrmann, Paweł Zuzelski, Perry Lorier, Ralf Wildenhues, Tudor-Ioan Salomie, Witold Baryluk</p>
+  <p><a data-type="xref" href="/sre-book/addressing-cascading-failures/">Addressing Cascading Failures</a>: Mike Curtis, Ryan Anderson</p>
+  <p><a data-type="xref" href="/sre-book/managing-critical-state/">Managing Critical State: Distributed Consensus for Reliability</a>: Ananth Shrinivas, Mike Burrows</p>
+  <p><a data-type="xref" href="/sre-book/distributed-periodic-scheduling/">Distributed Periodic Scheduling with Cron</a>: Ben Fried, Derek Jackson, Gabe Krabbe, Laura Nolan, Seth Hettich</p>
+  <p><a data-type="xref" href="/sre-book/data-processing-pipelines/">Data Processing Pipelines</a>: Abdulrahman Salem, Alex Perry, Arnar Mar Hrafnkelsson, Dieter Pearcey, Dylan Curley, Eivind Eklund, Eric Veach, Graham Poulter, Ingvar Mattsson, John Looney, Ken Grant, Michelle Duffy, Mike Hochberg, Will Robinson</p>
+  <p><a data-type="xref" href="/sre-book/data-integrity/">Data Integrity: What You Read Is What You Wrote</a>: Corey Vickrey, Dan Ardelean, Disney Luangsisongkham, Gordon Prioreschi, Kristina Bennett, Liang Lin, Michael Kelly, Sergey Ivanyuk</p>
+  <p><a data-type="xref" href="/sre-book/reliable-product-launches/">Reliable Product Launches at Scale</a>: Vivek Rau</p>
+  <p><a data-type="xref" href="/sre-book/accelerating-sre-on-call/">Accelerating SREs to On-Call and Beyond</a>: Melissa Binde, Perry Lorier, Preston Yoshioka</p>
+  <p><a data-type="xref" href="/sre-book/dealing-with-interrupts/">Dealing with Interrupts</a>: Ben Lutch, Carla Geisser, Dzevad Trumic, John Turek, Matt Brown</p>
+  <p><a data-type="xref" href="/sre-book/operational-overload/">Embedding an SRE to Recover from Operational Overload</a>: Charles Stephen Gunn, Chris Heiser, Max Luebbe, Sam Greenfield</p>
+  <p><a data-type="xref" href="/sre-book/communication-and-collaboration/">Communication and Collaboration in SRE</a>: Alex Kehlenbeck, Jeromy Carriere, Joel Becker, Sowmya Vijayaraghavan, Trevor Mattson-Hamilton</p>
+  <p><a data-type="xref" href="/sre-book/evolving-sre-engagement-model/">The Evolving SRE Engagement Model</a>: Seth Hettich</p>
+  <p><a data-type="xref" href="/sre-book/lessons-learned/">Lessons Learned from Other Industries</a>: Adrian Hilton, Brad Kratochvil, Charles Ballowe, Dan Sheridan, Eddie Kennedy, Erik Gross, Gus Hartmann, Jackson Stone, Jeff Stevenson, John Li, Kevin Greer, Matt Toia, Michael Haynie, Mike Doherty, Peter Dahl, Ron Heiby</p>
+  <p>We are also grateful to the following contributors, who either provided significant material, did an excellent job of reviewing, agreed to be interviewed, supplied significant expertise or resources, or had some otherwise excellent effect on this work:</p>
+  <p>Abe Hassan, Adam Rogoyski, Alex Hidalgo, Amaya Booker, Andrew Fikes, Andrew Hurst, Ariel Goh, Ashleigh Rentz, Ayman Hourieh, Barclay Osborn, Ben Appleton, Ben Love, Ben Winslow, Bernhard Beck, Bill Duane, Bill Patry, Blair Zajac, Bob Gruber, Brian Gustafson, Bruce Murphy, Buck Clay, Cedric Cellier, Chiho Saito, Chris Carlon, Christopher Hahn, Chris Kennelly, Chris Taylor, Ciara Kamahele-Sanfratello, Colin Phipps, Colm Buckley, Craig Paterson, Daniel Eisenbud, Daniel V. Klein, Daniel Spoonhower, Dan Watson, Dave Phillips, David Hixson, Dina Betser, Doron Meyer, Dmitry Fedoruk, Eric Grosse, Eric Schrock, Filip Zyzniewski, Francis Tang, Gary Arneson, Georgina Wilcox, Gretta Bartels, Gustavo Franco, Harald Wagener, Healfdene Goguen, Hugo Santos, Hyrum Wright, Ian Gulliver, Jakub Turski, James Chivers, James O’Kane, James Youngman, Jan Monsch, Jason Parker-Burlingham, Jason Petsod, Jeffry McNeil, Jeff Dean, Jeff Peck, Jennifer Mace, Jerry Cen, Jess Frame, John Brady, John Gunderman, John Kochmar, John Tobin, Jordyn Buchanan, Joseph Bironas, Julio Merino, Julius Plenz, Kate Ward, Kathy Polizzi, Katrina Sostek, Kenn Hamm, Kirk Russell, Kripa Krishnan, Larry Greenfield, Lea Oliveira, Luca Cittadini, Lucas Pereira, Magnus Ringman, Mahesh Palekar, Marco Paganini, Mario Bonilla, Mathew Mills, Mathew Monroe, Matt D. Brown, Matt Proud, Max Saltonstall, Michal Jaszczyk, Mihai Bivol, Misha Brukman, Olivier Oansaldi, Patrick Bernier, Pierre Palatin, Rob Shanley, Robert van Gent, Rory Ward, Rui Zhang-Shen, Salim Virji, Sanjay Ghemawat, Sarah Coty, Sean Dorward, Sean Quinlan, Sean Sechrist, Shari Trumbo-McHenry, Shawn Morrissey, Shun-Tak Leung, Stan Jedrus, Stefano Lattarini, Steven Schirripa, Tanya Reilly, Terry Bolt, Tim Chaplin, Toby Weingartner, Tom Black, Udi Meiri, Victor Terron, Vlad Grama, Wes Hertlein, and Zoltan Egyed.</p>
+  <p>We very much appreciate the thoughtful and in-depth feedback that we received from external reviewers: Andrew Fong, Björn Rabenstein, Charles Border, David Blank-Edelman, Frossie Economou, James Meickle, Josh Ryder, Mark Burgess, and Russ Allbery.</p>
+  <p>We would like to extend special thanks to Cian Synnott, original book team member and co-conspirator, who left Google before this project was completed but was deeply influential to it, and Margaret Hamilton, who so graciously allowed us to reference her story in our preface. Additionally, we would like to extend special thanks to Shylaja Nukala, who generously gave of the time of her technical writers and supported their necessary and valued efforts wholeheartedly.</p>
+  <p>The editors would also like to personally thank the following people:</p>
+  <p>Betsy Beyer: To Grandmother (my personal hero), for supplying endless amounts of phone pep talks and popcorn, and to Riba, for supplying me with the sweatpants necessary to fuel several late nights. These, of course, in addition to the cast of SRE all-stars who were indeed delightful collaborators.</p>
+  <p>Chris Jones: To Michelle, for saving me from a life of crime on the high seas and for her uncanny ability to find manzanas in unexpected places, and to those who’ve taught me about engineering over the years.</p>
+  <p>Jennifer Petoff: To my husband Scott for being incredibly supportive during the two year process of writing this book and for keeping the editors supplied with plenty of sugar on our "Dessert Island."</p>
+  <p>Niall Murphy: To Léan, Oisín, and Fiachra, who were considerably more patient than I had any right to expect with a substantially rantier father and husband than usual, for years. To Dermot, for the transfer offer.</p>
+</section>
+
+<div class="footnotes" data-type="footnotes"><p data-type="footnote" id="id-p8BuwtjFz"><sup><a class="jumptargets" href="#id-p8BuwtjFz-marker">1</a></sup>The very fact that there is such large variance in these estimates tells you something about software engineering as a discipline, but see, e.g., <a data-type="xref" href="/sre-book/bibliography#Gla02">[Gla02]</a> for more details.</p><p data-type="footnote" id="id-gA2u2Iyh4"><sup><a class="jumptargets" href="#id-gA2u2Iyh4-marker">2</a></sup>For our purposes, reliability is "The probability that [a system] will perform a required function without failure under stated conditions for a stated period of time," following the definition in <a data-type="xref" href="/sre-book/bibliography#Oco12">[Oco12]</a>.</p><p data-type="footnote" id="id-qpMuvtVhy"><sup><a class="jumptargets" href="#id-qpMuvtVhy-marker">3</a></sup>The software systems we’re concerned with are largely websites and similar services; we do not discuss the reliability concerns that face software intended for nuclear power plants, aircraft, medical equipment, or other safety-critical systems. We do, however, compare our approaches with those used in other industries in <a data-type="xref" href="/sre-book/lessons-learned/">Lessons Learned from Other Industries</a>.</p><p data-type="footnote" id="id-qpMuAFAcy"><sup><a class="jumptargets" href="#id-qpMuAFAcy-marker">4</a></sup>In this, we are distinct from the industry term DevOps, because although we definitely regard infrastructure as code, we have <em>reliability</em> as our main focus. Additionally, we are strongly oriented toward removing the necessity for operations—see <a data-type="xref" href="/sre-book/automation-at-google/">The Evolution of Automation at Google</a> for more details.</p><p data-type="footnote" id="id-na2u1SWHw"><sup><a class="jumptargets" href="#id-na2u1SWHw-marker">5</a></sup>In addition to this great story, she also has a substantial claim to popularizing the term "software engineering."</p></div></section>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="maia-aux">
+      <div class="previous">
+          <a href="/sre-book/foreword/">
+            <p class="footer-caption">Previous</p>
+            <p class="chapter-link">
+                Foreword
+            </p>
+          </a>
+      </div>
+      <div class="next">
+          <a href="/sre-book/part-I-introduction/">
+            <p class="footer-caption">Next</p>
+            <p class="chapter-link">
+                Part I - Introduction
+            </p>
+          </a>
+      </div>
+        <p class="footer-link">Copyright © 2017 Google, Inc. Published by O'Reilly Media, Inc. Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" rel="noopener noreferrer" target="_blank">CC BY-NC-ND 4.0</a></p>
+    </div>
+  </div>
+    </main>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular-touch.min.js"></script>
+    <script src="/sre-book/static/js/index.min.js?cache=5b7f90b"></script>
+
+  </body>
+</html>
