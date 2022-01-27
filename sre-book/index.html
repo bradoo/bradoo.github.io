@@ -16,7 +16,12 @@
         <div ng-include="'head.html'"></div>
         <div id="maia-main" role="main">
             <div ng-view></div>
-            <script>
+
+        </div>
+        <div ng-inclue="'footer.html'"></div>
+    </main>
+    <script src="/sre-book/static/js/index.min.js?cache=5b7f90b"></script>
+    <script>
             var app = angular.module("app", ["ngRoute"]);
             app.config(function($routeProvider) {
               $routeProvider
@@ -33,10 +38,6 @@
                 templateUrl : "preface.html"
               });
             });
-            </script>
-        </div>
-        <div ng-inclue="'footer.html'"></div>
-    </main>
-    <script src="/sre-book/static/js/index.min.js?cache=5b7f90b"></script>
+    </script>
     </body>
 </html>
