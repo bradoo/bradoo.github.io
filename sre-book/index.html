@@ -11,13 +11,13 @@
     <script src="/sre-book/ajax/libs/angularjs/1.6.6/angular-touch.min.js"></script>
     <script src="/sre-book/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
   </head>
-  <body ng-app="myApp">
+  <body ng-app="app">
     <main>
         <div ng-include="'head.html'"></div>
         <div id="maia-main" role="main">
             <div ng-view></div>
             <script>
-            var app = angular.module("myApp", ["ngRoute"]);
+            var app = angular.module("app", ["ngRoute"]);
             app.config(function($routeProvider) {
               $routeProvider
               .when("/", {
@@ -37,5 +37,6 @@
         </div>
         <div ng-inclue="'footer.html'"></div>
     </main>
+    <script src="/sre-book/static/js/index.min.js?cache=5b7f90b"></script>
     </body>
 </html>
