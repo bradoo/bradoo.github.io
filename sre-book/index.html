@@ -12,11 +12,29 @@
     <link rel="shortcut icon" href="https://lh3.googleusercontent.com/Yf2DCX8RKda6r4Jml9DLMByS2zQCBFs3kQpvBfN8UgIh4YVWIYSYIQOoTxJriyuM26cT5PDjyEb5aynDQ0Xyz46yHKnfg8JlUbDW">
     <link href="/sre-book/static/css/index.min.css?cache=06bf08c" rel="stylesheet">
   </head>
-  <body>
+  <body ng-app="myApp">
     <main>
         <div ng-include="'head.html'"></div>
         <div id="maia-main" role="main">
-          <div ng-include="'toc.html'"></div>
+            <div ng-view></div>
+            <script>
+            var app = angular.module("myApp", ["ngRoute"]);
+            app.config(function($routeProvider) {
+              $routeProvider
+              .when("/", {
+                templateUrl : "toc.html"
+              })
+              .when("/table-of-contents", {
+                templateUrl : "toc.html"
+              })
+              .when("/foreword", {
+                templateUrl : "foreword.html"
+              })
+              .when("/preface", {
+                templateUrl : "preface.html"
+              });
+            });
+            </script>
         </div>
         <div ng-inclue="'footer.html'"></div>
     </main>
