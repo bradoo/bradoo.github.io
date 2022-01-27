@@ -14,15 +14,10 @@
   <body>
     <main>
         <div ng-include="'head.html'"></div>
-        <div id="maia-main" role="main">
+        <div id="maia-main" role="main" ng-app="myApp">
             <div ng-view></div>
-
-        </div>
-        <div ng-inclue="'footer.html'"></div>
-    </main>
-    <script src="/sre-book/static/js/index.min.js?cache=5b7f90b"></script>
-    <script>
-            var app = angular.module("app", ["ngRoute"]);
+            <script>
+            var app = angular.module("myApp", ["ngRoute"]);
             app.config(function($routeProvider) {
               $routeProvider
               .when("/", {
@@ -38,6 +33,10 @@
                 templateUrl : "preface.html"
               });
             });
-    </script>
+            </script>
+        </div>
+        <div ng-inclue="'footer.html'"></div>
+    </main>
+    <script src="/sre-book/static/js/index.min.js?cache=5b7f90b"></script>
     </body>
 </html>
