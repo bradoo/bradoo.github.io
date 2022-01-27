@@ -11,10 +11,10 @@
     <script src="/sre-book/ajax/libs/angularjs/1.6.6/angular-touch.min.js"></script>
     <script src="/sre-book/ajax/libs/angularjs/1.6.6/angular-route.js"></script>
   </head>
-  <body>
+  <body ng-app="myApp">
     <main>
         <div ng-include="'head.html'"></div>
-        <div id="maia-main" role="main" ng-app="myApp">
+        <div id="maia-main" role="main">
             <div ng-view></div>
             <script>
             var app = angular.module("myApp", ["ngRoute"]);
