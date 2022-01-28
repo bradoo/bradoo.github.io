@@ -17,32 +17,8 @@
         <div id="maia-main" role="main">
             <div ng-view></div>
             <script>
-            var app = angular.module("myApp", ["ngRoute"]);
-            var w={book:{}};
-            w.book.SreBookMenu=function(){
-                this.curtain=m.dom.getElement(w.book.SreBookMenu.IdName_.CURTAIN);
-                this.burgerMenu=m.dom.getElement(w.book.SreBookMenu.IdName_.BURGER_MENU);
-                this.overlayElement=m.dom.getElement(w.book.SreBookMenu.IdName_.OVERLAY_ELEMENT);
-                this.bodyElement=m.dom.getElement(document.body);this.init_()
-            };
-            w.book.SreBookMenu.ClassName_={EXPAND:"expand",ACTIVE:"active",HIDE:"hide",COLLAPSE:"collapse",EXPANDS:"expands",COLLAPSES:"collapses",NOT_SCROLLABLE:"not-scrollable",MENU_OPENED:"menu-opened",MENU_CLOSED:"menu-closed"};
-            w.book.SreBookMenu.IdName_={CURTAIN:"curtain",BURGER_MENU:"burger-menu",OVERLAY_ELEMENT:"overlay-element"};
-            w.book.SreBookMenu.prototype.init_=function(){
-                var b=m.bind(this.toggleMenu_,this,this.burgerMenu),c=m.bind(this.toggleMenu_,this,this.curtain);m.events.listen(this.burgerMenu,m.events.EventType.CLICK,b);
-                 m.events.listen(this.curtain,m.events.EventType.CLICK,c)
-            };
-            w.book.SreBookMenu.prototype.toggleMenu_=function(){m.dom.classlist.contains(this.burgerMenu,w.book.SreBookMenu.ClassName_.EXPAND)?(this.bodyElement.className=w.book.SreBookMenu.ClassName_.NOT_SCROLLABLE,m.dom.classlist.swap(this.burgerMenu,w.book.SreBookMenu.ClassName_.HIDE,w.book.SreBookMenu.ClassName_.ACTIVE),m.dom.classlist.swap(this.burgerMenu,w.book.SreBookMenu.ClassName_.EXPAND,w.book.SreBookMenu.ClassName_.COLLAPSE),m.dom.classlist.swap(this.overlayElement,w.book.SreBookMenu.ClassName_.EXPANDS,
-            w.book.SreBookMenu.ClassName_.COLLAPSES),m.dom.classlist.swap(this.curtain,w.book.SreBookMenu.ClassName_.MENU_CLOSED,w.book.SreBookMenu.ClassName_.MENU_OPENED)):(this.bodyElement.className=this.bodyElement.className.replace(w.book.SreBookMenu.ClassName_.NOT_SCROLLABLE,""),m.dom.classlist.swap(this.burgerMenu,w.book.SreBookMenu.ClassName_.ACTIVE,w.book.SreBookMenu.ClassName_.HIDE),m.dom.classlist.swap(this.burgerMenu,w.book.SreBookMenu.ClassName_.COLLAPSE,w.book.SreBookMenu.ClassName_.EXPAND),m.dom.classlist.swap(this.overlayElement,
-            w.book.SreBookMenu.ClassName_.COLLAPSES,w.book.SreBookMenu.ClassName_.EXPANDS),m.dom.classlist.swap(this.curtain,w.book.SreBookMenu.ClassName_.MENU_OPENED,w.book.SreBookMenu.ClassName_.MENU_CLOSED))};
-                function x(){
-                    this.data_={stuff:"things"}}a.global.Object.defineProperties(x.prototype,{data:{configurable:!0,enumerable:!0,get:function(){return this.data_}}});
-                var y=app.controller("HeaderCtrl",w.book.SreBookMenu).value("glueModalServiceStoreRouteDisable",!0).directive("uniteOrphan",function(){
-                    var b=/\w*\s\w*(\.|\?|!)?('|"|\u2019|\u201d)?$/;return{restrict:"A",link:function(c,d,e){if(e.uniteOrphan&&(c=d[0].innerText.match(b))&&c[0].length>e.uniteOrphan)return;
-                                                                                                             d[0].innerText=d[0].innerText.replace(/ ([^ ]*)$/,"\u00a0$1")}}}).filter("emphatic",function(){return function(b){return b+"!"}}).service("sharedData",x).name,z=void 0,B=z=void 0===
-z?window:z;B=void 0===B?window:B;0!=B.glueAppSupported&&z.angular&&z.angular.bootstrap(z.document.documentElement,[y],void 0);}).call(window)
-
-            
-                app.config(function($routeProvider) {
+              var app = angular.module("myApp", ["ngRoute"]);
+              app.config(function($routeProvider) {
               $routeProvider
               .when("/", {
                 templateUrl : "toc.html"
