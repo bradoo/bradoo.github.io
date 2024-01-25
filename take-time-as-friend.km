@@ -1,0 +1,1666 @@
+{
+    "root": {
+        "data": {
+            "id": "cy39bv9jxb40",
+            "created": 1704100832992,
+            "text": "把时间当作朋友"
+        },
+        "children": [
+            {
+                "data": {
+                    "id": "cy39c91n66g0",
+                    "created": 1704100862988,
+                    "text": "第0章 困境",
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": 3,
+                        "y": 48
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy39d7myqcw0",
+                            "created": 1704100938288,
+                            "text": "1.问题",
+                            "priority": 1
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy39o27gho80",
+                                    "created": 1704101788472,
+                                    "text": "干扰层出不穷，总觉时间不够"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39dfbd4vc0",
+                            "created": 1704100955001,
+                            "text": "2.慌乱",
+                            "priority": 2
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy39od1zpjs0",
+                                    "created": 1704101812087,
+                                    "text": "勤于做错误事，懒于做正确事"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39div241s0",
+                            "created": 1704100962722,
+                            "text": "3.解决",
+                            "priority": 3
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy39qwmc09c0",
+                                    "created": 1704102011404,
+                                    "text": "时间无法管理，只能管好自己"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy39co1nkcw0",
+                    "created": 1704100895641,
+                    "text": "第1章 醒悟 ",
+                    "priority": 1,
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": 0,
+                        "y": 75
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy39e0ofivk0",
+                            "created": 1704101001504,
+                            "text": "1.孰主孰仆",
+                            "priority": 1
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy39yhmjqls0",
+                                    "created": 1704102605678,
+                                    "text": "不跟着感觉走，做大脑的主人"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39f041udk0",
+                            "created": 1704101078635,
+                            "text": "2.何为心智",
+                            "priority": 2
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3a5bqcuw00",
+                                    "created": 1704103141397,
+                                    "text": "心智需要开启，上下没有边界"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39f7tkhd40",
+                            "created": 1704101095416,
+                            "text": "3.我的案例",
+                            "priority": 3
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3a7wanu6g0",
+                                    "created": 1704103342889,
+                                    "text": "1.十元钱的收益",
+                                    "priority": 1
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cy3a8dc052o0",
+                                            "created": 1704103379975,
+                                            "text": "花钱学电脑，受益千万倍"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cy3a849x91k0",
+                                    "created": 1704103360258,
+                                    "text": "2.盲打是否值得学",
+                                    "priority": 2
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cy3aaqgdejk0",
+                                            "created": 1704103565266,
+                                            "text": "后悔当初没掌握，只是当时也迷茫"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "data": {
+                                    "id": "cy3abrdquxs0",
+                                    "created": 1704103645648,
+                                    "text": "3.小节",
+                                    "priority": 3
+                                },
+                                "children": [
+                                    {
+                                        "data": {
+                                            "id": "cy3aby2o7s00",
+                                            "created": 1704103660216,
+                                            "text": "不知道是否有用但依然愿意去学，学完了才知道是否有用。认为没用而拒绝去学，则永远不知道是否有用。"
+                                        },
+                                        "children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy39d02mip40",
+                    "created": 1704100921821,
+                    "text": "第2章 现实",
+                    "priority": 2,
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": 1,
+                        "y": 88
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy39fmjy7800",
+                            "created": 1704101127486,
+                            "text": "1.速成绝不可能",
+                            "priority": 1
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3ag7p89eg0",
+                                    "created": 1704103994628,
+                                    "text": "不要太浮躁，耐心等结果"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39gchs2xs0",
+                            "created": 1704101183951,
+                            "text": "2.交换才是硬道理",
+                            "priority": 2
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3b1z0ft3s0",
+                                    "created": 1704105699726,
+                                    "text": "用好已拥有，以有换想要"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39gkjhymw0",
+                            "created": 1704101201469,
+                            "text": "3.完美永不存在",
+                            "priority": 3
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3baxjrn8w0",
+                                    "created": 1704106401819,
+                                    "text": "完美最脆弱，过分难完成"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39h2iwnig0",
+                            "created": 1704101240616,
+                            "text": "4.未知永远存在",
+                            "priority": 4
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3bjj7hstc0",
+                                    "created": 1704107075879,
+                                    "text": "总有新未知，留待来日破"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39hm4sq000",
+                            "created": 1704101283298,
+                            "text": "5.现状无法马上摆脱",
+                            "priority": 5
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3bpby1p400",
+                                    "created": 1704107530255,
+                                    "text": "能力靠积累，成功靠顺境"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy39hxtz3nc0",
+                            "created": 1704101308765,
+                            "text": "6.与时间做朋友"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3bxailx8o0",
+                                    "created": 1704108154058,
+                                    "text": "接受资源稀缺，成功靠时间积累"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy3v5qad50g0",
+                    "created": 1704162416390,
+                    "text": "第3章 管理",
+                    "priority": 3,
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": -3,
+                        "y": 103
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy3yn96jsko0",
+                            "created": 1704172253040,
+                            "text": "1.估算时间",
+                            "priority": 1,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3yng8pzvc0",
+                                    "created": 1704172268407,
+                                    "text": "工期不好估算，做好长期准备"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy3yo804zhc0",
+                            "created": 1704172328838,
+                            "text": "2.及时行动",
+                            "priority": 2,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3zq69r02g0",
+                                    "created": 1704175302904,
+                                    "text": "现在就要开始，别怕无法完美"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy3zrmo7miw0",
+                            "created": 1704175416971,
+                            "text": "3.直面困难",
+                            "priority": 3,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3zwfnskvs0",
+                                    "created": 1704175793529,
+                                    "text": "不要逃避困难，要敢于去挑战"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy3zxjkf6y00",
+                            "created": 1704175880397,
+                            "text": "4.关注步骤",
+                            "priority": 4,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy3zxw81ecw0",
+                                    "created": 1704175907946,
+                                    "text": "学会三思而行，焦点放在行上"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy4091r4fz40",
+                            "created": 1704176781990,
+                            "text": "5.并行串行",
+                            "priority": 5,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy40hzofihk0",
+                                    "created": 1704177482751,
+                                    "text": "正确选择并行，合理拆分任务，合理切分时间"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy40k64tqkg0",
+                            "created": 1704177653531,
+                            "text": "6.感知时间",
+                            "priority": 6,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy4100pz6uw0",
+                                    "created": 1704178895576,
+                                    "text": "时间感知能力，记录时间提升"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy4117224vs0",
+                            "created": 1704178987732,
+                            "text": "7.记录开销",
+                            "priority": 7,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy414ew5b1c0",
+                                    "created": 1704179239881,
+                                    "text": "记录时间开销，发掘个人潜能"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy414xfxvco0",
+                            "created": 1704179280260,
+                            "text": "8.制定预算",
+                            "priority": 8,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy42ko9kka80",
+                                    "created": 1704183335220,
+                                    "text": "先分是否真重要，再别有趣和有用"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy42naer10o0",
+                            "created": 1704183540151,
+                            "text": "9.计划",
+                            "priority": 9,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy42nhn8kzk0",
+                                    "created": 1704183555902,
+                                    "text": "计划成功的前提：目标现实可行"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy4333aaz6w0",
+                                    "created": 1704184778471,
+                                    "text": "长期计划是需要通过实践才能习得的能力"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy433teuncg0",
+                                    "created": 1704184835342,
+                                    "text": "有些时候没必要做计划"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy434va1ek80",
+                            "created": 1704184917769,
+                            "text": "10.列表",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy43a17tx480",
+                                    "created": 1704185322517,
+                                    "text": "最方便的列表工具是纸和笔"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy43aedog1c0",
+                                    "created": 1704185351169,
+                                    "text": "列表没必要工整"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy43b2m37o80",
+                                    "created": 1704185403920,
+                                    "text": "列表一定要随手可及"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy43b92p7vc0",
+                                    "created": 1704185417985,
+                                    "text": "制作专门的下一阶段任务列表"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy43bjy3zs00",
+                                    "created": 1704185441652,
+                                    "text": "给每个任务制定一个核对列表"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy43c7s668w0",
+                                    "created": 1704185493536,
+                                    "text": "列表一旦开始运作，就一定要执行到底"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy43cmzljo80",
+                            "created": 1704185526637,
+                            "text": "11.流程",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy43cs0ehco0",
+                                    "created": 1704185537569,
+                                    "text": "重复任务要总结，下次才能高效率"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy43i7ydupc0",
+                            "created": 1704185964098,
+                            "text": "12.预演",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy43kvr85nc0",
+                                    "created": 1704186172635,
+                                    "text": "想要任务少犯错，多做预演没坏处"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy43l91yeig0",
+                            "created": 1704186201582,
+                            "text": "13.验收",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy43nxgxlls0",
+                                    "created": 1704186411459,
+                                    "text": "做事不放弃，验收很重要"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy5juy0r8ew0",
+                    "created": 1704333658922,
+                    "text": "第5章 思考",
+                    "priority": 5,
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": -509,
+                        "y": -244
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy5jvhgbh5s0",
+                            "created": 1704333701222,
+                            "text": "1.勤于思考",
+                            "priority": 1,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5l4mye3ko0",
+                                    "created": 1704337239586,
+                                    "text": "不愿思考人太多，迷信权威是常态。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5l5f2921s0",
+                            "created": 1704337300769,
+                            "text": "2.思维陷阱",
+                            "priority": 2,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5lb9kk54w0",
+                                    "created": 1704337759000,
+                                    "text": "概念不清"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy5lbddyaag0",
+                                    "created": 1704337767308,
+                                    "text": "拒绝接受不确定性"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5lt7xpa5c0",
+                            "created": 1704339165996,
+                            "text": "3.因果关系",
+                            "priority": 3,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5ltgp23dk0",
+                                    "created": 1704339185065,
+                                    "text": "基础"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy5ltsf2j340",
+                                    "created": 1704339210582,
+                                    "text": "双盲测试"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy5ltxonvtk0",
+                                    "created": 1704339222046,
+                                    "text": "自证预言"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy5lu6oja4w0",
+                                    "created": 1704339241629,
+                                    "text": "小结"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5luoqh1h40",
+                            "created": 1704339280929,
+                            "text": "4.相关命题",
+                            "priority": 4,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5m6zyrnc00",
+                                    "created": 1704340245745,
+                                    "text": "原命题和逆命题不一定是互为因果"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5mdscb6s80",
+                            "created": 1704340777699,
+                            "text": "5.举证责任",
+                            "priority": 5,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5memdvjzs0",
+                                    "created": 1704340843097,
+                                    "text": "提出命题者应该负责举证"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5mf9lkrvc0",
+                            "created": 1704340893628,
+                            "text": "6.案例局限",
+                            "priority": 6,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5mfi443io0",
+                                    "created": 1704340912163,
+                                    "text": "案例总是会以偏概全，成功难以复制"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5mj6wdr2w0",
+                            "created": 1704341201208,
+                            "text": "7.对立论证",
+                            "priority": 7,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5mqqzpxr40",
+                                    "created": 1704341793495,
+                                    "text": "凡是有两面，结论难绝对"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5mr1kezgw0",
+                            "created": 1704341816514,
+                            "text": "8.张冠李戴",
+                            "priority": 8,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5mv02xgn40",
+                                    "created": 1704342126736,
+                                    "text": "要使用正确的逻辑来论证你的观点"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5mvxtf9cw0",
+                            "created": 1704342200172,
+                            "text": "9.辨析感悟",
+                            "priority": 9,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5mw54wmrk0",
+                                    "created": 1704342216104,
+                                    "text": "感悟不等于道理，多关注失败者"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5n6y3e7k80",
+                            "created": 1704343062781,
+                            "text": "10.克服恐惧",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5nburvly80",
+                                    "created": 1704343447375,
+                                    "text": "人的强弱由勇气和恐惧来决定"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy5ncmnfdco0",
+                            "created": 1704343508056,
+                            "text": "11.辅助工具",
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy5ncw9cmfs0",
+                                    "created": 1704343528972,
+                                    "text": " 改变语言习惯，可以改变思维习惯"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy6fa3s2ozs0",
+                    "created": 1704422301327,
+                    "text": "第6章 交流",
+                    "layout_mind_offset": {
+                        "x": 22,
+                        "y": 134
+                    },
+                    "priority": 6,
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy6nhv8tye00",
+                            "created": 1704445478542,
+                            "text": "1.学会倾听",
+                            "priority": 1,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy6nkgt3m2w0",
+                                    "created": 1704445682208,
+                                    "text": "听决定交流的效果，主动倾听才能提高交流效果"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy6ni24duz40",
+                            "created": 1704445493510,
+                            "text": "2.说与不说",
+                            "priority": 2,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy6nll53i2o0",
+                                    "created": 1704445770005,
+                                    "text": "说话要想有人听，不靠数量靠信任"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy6nicfyxnk0",
+                            "created": 1704445515979,
+                            "text": "3.交流守则",
+                            "priority": 3,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy6nmhhg0f40",
+                                    "created": 1704445840408,
+                                    "text": "第一个原则：有意义的讨论前提是双方既要“相互竞争”，更要“相互合作”"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6no7n1gw00",
+                                    "created": 1704445975707,
+                                    "text": "第二原则：真理独立存在，不依附于任何个人或者集体"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6novctuk00",
+                                    "created": 1704446027333,
+                                    "text": "第三个原则：真理不变，也不会因任何人而变，不停变化的只是人们对真理的解释或理解"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy6nij9svrs0",
+                            "created": 1704445530843,
+                            "text": "4.正确复述",
+                            "priority": 4,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy6nq0ikdxc0",
+                                    "created": 1704446116928,
+                                    "text": "想要复述正确，需要多做验证"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy6niwrr1tk0",
+                            "created": 1704445560227,
+                            "text": "5.勤于反思",
+                            "priority": 5,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy6nqgsmsls0",
+                                    "created": 1704446152365,
+                                    "text": "深刻了解经验的局限"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6nquwqkjk0",
+                                    "created": 1704446183088,
+                                    "text": "时刻保持警惕"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6nqynwlm00",
+                                    "created": 1704446191261,
+                                    "text": "做记录，让自己能够记住更多经验"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6nr89k5q80",
+                                    "created": 1704446212161,
+                                    "text": "通过观察和阅读汲取他人的经验"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6nrubgck80",
+                                    "created": 1704446260165,
+                                    "text": "试用类比，跨越未知与已知之间的障碍"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy6nsm2ayp40",
+                                    "created": 1704446320562,
+                                    "text": "那心等待，拥有不能快速获得的经验"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy943ma46hk0",
+                    "created": 1704695440712,
+                    "text": "第7章 应用",
+                    "layout_mind_offset": {
+                        "x": 23,
+                        "y": 155
+                    },
+                    "priority": 7,
+                    "expandState": "collapse"
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy9473roux40",
+                            "created": 1704695713872,
+                            "text": "1.兴趣",
+                            "priority": 1,
+                            "layout_left_offset": {
+                                "x": -40,
+                                "y": 33
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy947s4j5lc0",
+                                    "created": 1704695766892,
+                                    "text": "做不好则没兴趣，有兴趣因未开始"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy948zjwkmg0",
+                            "created": 1704695861423,
+                            "text": "2.方法",
+                            "priority": 2,
+                            "layout_left_offset": {
+                                "x": -42,
+                                "y": 27
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy949whveio0",
+                                    "created": 1704695933134,
+                                    "text": "方法固然重要，坚持才最有效"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy94upc59600",
+                            "created": 1704697563197,
+                            "text": "3.痛苦",
+                            "priority": 3,
+                            "layout_left_offset": {
+                                "x": -48,
+                                "y": 19
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy94uuno8s00",
+                                    "created": 1704697574778,
+                                    "text": "学会记录痛苦，学会控制痛苦"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy94ydcv5k00",
+                            "created": 1704697850576,
+                            "text": "4.比较",
+                            "priority": 4,
+                            "layout_left_offset": {
+                                "x": -44,
+                                "y": 11
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy94yjjw6ao0",
+                                    "created": 1704697864062,
+                                    "text": "成功全靠比较，成长全在自己"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy95182ubhc0",
+                            "created": 1704698074179,
+                            "text": "5.运气",
+                            "priority": 5,
+                            "layout_left_offset": {
+                                "x": -24,
+                                "y": 5
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy951n46wf40",
+                                    "created": 1704698106912,
+                                    "text": "弱者相信运气，强者只究因果"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy952xobyow0",
+                            "created": 1704698208262,
+                            "text": "6.人脉",
+                            "priority": 6,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy95c3q74m00",
+                                    "created": 1704698926713,
+                                    "text": "人脉不靠刻意攒，自己厉害自然来"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy95ctx5y9c0",
+                            "created": 1704698983730,
+                            "text": "7.自卑",
+                            "layout_left_offset": {
+                                "x": -10,
+                                "y": -9
+                            },
+                            "priority": 7,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy95eccyhi00",
+                                    "created": 1704699102232,
+                                    "text": "优秀者易自卑，适当放纵自己"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy95i2dsoo00",
+                            "created": 1704699393971,
+                            "text": "8.灵感",
+                            "layout_left_offset": {
+                                "x": -24,
+                                "y": -19
+                            },
+                            "priority": 8,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy95luc8ba80",
+                                    "created": 1704699689919,
+                                    "text": "专心投入时间，灵感自然会来"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy95mpfvveg0",
+                            "created": 1704699757620,
+                            "text": "9.鼓励",
+                            "layout_left_offset": {
+                                "x": -41,
+                                "y": -26
+                            },
+                            "priority": 9,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy95scxuy680",
+                                    "created": 1704700200594,
+                                    "text": "想做就做，别等鼓励"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy95solhnj40",
+                            "created": 1704700225967,
+                            "text": "10.效率",
+                            "layout_left_offset": {
+                                "x": -53,
+                                "y": -31
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy960nv2uyw0",
+                                    "created": 1704700851284,
+                                    "text": "不求效率最好，持续进行更好"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy961208wm00",
+                            "created": 1704700882071,
+                            "text": "11.节奏",
+                            "layout_left_offset": {
+                                "x": -48,
+                                "y": -30
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy962b8npao0",
+                                    "created": 1704700980535,
+                                    "text": "生活节奏要放慢，凡事莫求能速成"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy9639ujv340",
+                            "created": 1704701055869,
+                            "text": "12.物极必反",
+                            "layout_left_offset": {
+                                "x": -43,
+                                "y": -32
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy963r08cxs0",
+                                    "created": 1704701093218,
+                                    "text": "不减少睡眠时间"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy964i1rsi00",
+                                    "created": 1704701152084,
+                                    "text": "不减少与家人交流时间"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy964kdg68o0",
+                                    "created": 1704701157144,
+                                    "text": "不放弃社交时间"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy964xmvxcg0",
+                            "created": 1704701186013,
+                            "text": "13.自我证明",
+                            "layout_left_offset": {
+                                "x": -36,
+                                "y": -17
+                            },
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy966ij9unc0",
+                                    "created": 1704701309871,
+                                    "text": "准确评价自我，理性面对现实"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy97fdkzy880",
+                    "created": 1704704825479,
+                    "text": "第8章 积累",
+                    "layout_mind_offset": {
+                        "x": 19,
+                        "y": 173
+                    },
+                    "expandState": "collapse",
+                    "priority": 8
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy97fy0wtr40",
+                            "created": 1704704869976,
+                            "text": "1.坚信积累"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97jei2e3c0",
+                            "created": 1704705140935,
+                            "text": "2.越早越好"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97kbfqlyg0",
+                            "created": 1704705212628,
+                            "text": "3.如何开始"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97lkqog7k0",
+                            "created": 1704705311244,
+                            "text": "4.躺着赚钱"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97m8m48vs0",
+                            "created": 1704705363211,
+                            "text": "5.自由意志"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97n14u0hs0",
+                            "created": 1704705425293,
+                            "text": "6.生活目标"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97o911f6w0",
+                            "created": 1704705520843,
+                            "text": "7.注重学识"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97p42jhj40",
+                            "created": 1704705588413,
+                            "text": "8.节省与否"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97qqz75400",
+                            "created": 1704705716641,
+                            "text": "9.人丑就要多读书"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97qwwtml40",
+                            "created": 1704705729558,
+                            "text": "10.被动支出"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97rwqs7p40",
+                            "created": 1704705807558,
+                            "text": "11.认识周期"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97stjlj080",
+                            "created": 1704705878957,
+                            "text": "12.性格养成"
+                        },
+                        "children": []
+                    },
+                    {
+                        "data": {
+                            "id": "cy97teq8o7c0",
+                            "created": 1704705925071,
+                            "text": "13。别做“险盲”"
+                        },
+                        "children": []
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy4popp4j480",
+                    "created": 1704248537322,
+                    "text": "第4章 学习",
+                    "priority": 4,
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": 15,
+                        "y": -256
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy4pp4b0ors0",
+                            "created": 1704248569121,
+                            "text": "1.效率本质",
+                            "priority": 1,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy4qt735rog0",
+                                    "created": 1704251709742,
+                                    "text": "提高效率靠学习，莫轻易拒绝学习。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy4qtv4c4000",
+                            "created": 1704251762056,
+                            "text": "2.基本途径",
+                            "priority": 2,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy4qu2uft8w0",
+                                    "created": 1704251778872,
+                                    "text": "获取知识靠体验，提升知识靠试错。扩展学习靠观察，阅读最是好途径。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy4r9d7jrs00",
+                            "created": 1704252976895,
+                            "text": "3.主要手段",
+                            "priority": 3,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy4ri8ka59c0",
+                                    "created": 1704253672059,
+                                    "text": "正确思考获真知，恐惧皆因有未知。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy4rjo0e9d40",
+                            "created": 1704253784049,
+                            "text": "经验局限",
+                            "priority": 4,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy4rxmsh06o0",
+                                    "created": 1704254878491,
+                                    "text": "依靠经验难突破，学会类比更轻松。"
+                                },
+                                "children": []
+                            }
+                        ]
+                    },
+                    {
+                        "data": {
+                            "id": "cy4rybrljao0",
+                            "created": 1704254932858,
+                            "text": "5.自学能力",
+                            "priority": 5,
+                            "expandState": "collapse"
+                        },
+                        "children": [
+                            {
+                                "data": {
+                                    "id": "cy4rynhaae80",
+                                    "created": 1704254958356,
+                                    "text": "自学能力的基础是阅读理解能力"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy4s7d9ikz40",
+                                    "created": 1704255641396,
+                                    "text": "检索能力是建立在相当熟练的阅读理解能力基础之上的"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy4s7ttzw9k0",
+                                    "created": 1704255677463,
+                                    "text": "写作能力在自学能力中占据重要位置"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy4s85g45lk0",
+                                    "created": 1704255702745,
+                                    "text": "实践能力是自学能力最终转化为真正价值的根本"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy4s9awn5y80",
+                                    "created": 1704255792992,
+                                    "text": "永远保持开放的心态"
+                                },
+                                "children": []
+                            },
+                            {
+                                "data": {
+                                    "id": "cy4s9hw1oyo0",
+                                    "created": 1704255808193,
+                                    "text": "了解学习的进程"
+                                },
+                                "children": []
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "data": {
+                    "id": "cy3vlndb8j40",
+                    "created": 1704163663864,
+                    "text": "相信我你并不孤独",
+                    "expandState": "collapse",
+                    "layout_mind_offset": {
+                        "x": 553,
+                        "y": -332
+                    }
+                },
+                "children": [
+                    {
+                        "data": {
+                            "id": "cy3vm6n28bs0",
+                            "created": 1704163705813,
+                            "text": "两辈子之后"
+                        },
+                        "children": []
+                    }
+                ]
+            }
+        ]
+    },
+    "template": "default",
+    "theme": "fresh-blue",
+    "version": "1.4.43"
+}
