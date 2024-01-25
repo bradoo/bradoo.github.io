@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>响应式个人博客模板</title>
+<meta name="keywords" content="个人博客，个人网站，个人博客模板，个人网站模板" />
+<meta name="description" content="响应式个人博客模板是由前端设计师杨青青（www.qingqingblog.com）于2021年5月份设计完成的，模板主要展示个人博客、相册、视频、介绍等功能。" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/base.css" rel="stylesheet">
+<link href="css/m.css" rel="stylesheet">
+<script src="js/jquery-3.6.0.min.js"></script>
+<script src="js/comm.js"></script>
+<link href="css/jquery.fancybox.css" rel="stylesheet">
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/photo_text_open.js"></script>
+</head>
+<body>
+<header>
+<div class="box">
+<div class="logo"><a href="index.html"><img src="images/logo.png" alt="logo"></a></div>
+<div class="ad_top"><a href=""><img src="images/ad01.jpg" alt="广告"></a></div>
+<div class="contact_icon">
+<ul>
+<li><a href="http://wpa.qq.com/msgrd?v=3&uin=1234567&site=qq&menu=yes"><i class="icon_qq"></i></a></li>
+<li><a href="tel:186491309**"><i class="icon_tel"></i></a></li>
+<li><a href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=1234567@qq.com" target="_blank"><i class="icon_email"></i></a></li>
+<li><i class="icon_weixin"><img src="images/wx.png" alt="微信号：1234567"></i></li>
+</ul>
+</div>
+<div class="clear"></div>
+<nav>
+<ul id="starlist">
+<li><a href="index.html">网站首页</a></li>
+<li><a href="blog.html">博文日记</a></li>
+<li class="menu"><a href="">所有内容</a>
+<ul class="sub">
+<li><a href="blog-info.html">文章内容</a></li>
+<li><a href="photos-info.html">相册内容</a></li>
+<li><a href="videos-info.html">视频内容</a></li>
+<li><a href="text-info.html">单页内容</a></li>
+<li><a href="tags.html">搜索标签</a></li>
+</ul>
+<span></span></li>
+<li><a href="photos.html">我的相册<i></i></a></li>
+<li><a href="videos.html">我的视频</a></li>
+<li><a href="text-list.html">文章列表</a></li>
+<li><a href="about.html">个人简历</a></li>
+</ul>
+<h2 id="mnavh"><span class="navicon"></span></h2>
+<div class="is-search"> <i></i> </div>
+<div class="search-page">
+<div class="search_box">
+<div class="go-left"></div>
+<div class="search">
+<form action="" method="post" name="searchform" id="searchform">
+<input name="keyboard" id="keyboard" class="input_text" value="请输入关键字词" style="color: rgb(153, 153, 153);" onFocus="if(value=='请输入关键字词'){this.style.color='#000';value=''}" onBlur="if(value==''){this.style.color='#999';value='请输入关键字词'}" type="text">
+<input name="show" value="title" type="hidden">
+<input name="tempid" value="1" type="hidden">
+<input name="tbname" value="news" type="hidden">
+<input name="Submit" class="input_submit" value="搜索" type="submit">
+</form>
+</div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<div class="ph_margin"></div>
+<div class="box">
+<div class="pic_page_box">
+<div class="album_box">
+<div class="album_info"> <i><img src="images/01.jpg" alt="高清薰衣草花田"></i>
+<h1>高清薰衣草花田<span>6张 </span></h1>
+<p class="a_i_ms" id="content"><em>描述</em>薰衣草又名香水植物，灵香草，香草，黄香草，拉文德。叶片狭窄，灰绿色，茎直立，在国外夏秋季节开花，为穗状花序，花序长5-15公分，花色因品种而异有蓝，淡紫，紫，浓紫及白色等，以蓝色最普遍。</p>
+<p class="a_i_time"><em>时间</em>2021-05-22创建</p>
+</div>
+<div class="visitor_area">
+<ul>
+<li>访客<span><script type="text/javascript">document.write('771');</script></span></li>
+<li>评论<span>0</span></li>
+<li>点赞<span><script type="text/javascript">document.write('27');</script></span></li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<div class="pics_content">
+<ul>
+<li><a href="images/01.jpg" data-fancybox="group" data-caption=""><i><img src="images/01.jpg" alt=""></i></a></li>
+<li><a href="images/02.jpg" data-fancybox="group" data-caption=""><i><img src="images/02.jpg" alt=""></i></a></li>
+<li><a href="images/03.jpg" data-fancybox="group" data-caption=""><i><img src="images/03.jpg" alt=""></i></a></li>
+<li><a href="images/04.jpg" data-fancybox="group" data-caption=""><i><img src="images/04.jpg" alt=""></i></a></li>
+<li><a href="images/05.jpg" data-fancybox="group" data-caption=""><i><img src="images/05.jpg" alt=""></i></a></li>
+<li><a href="images/06.jpg" data-fancybox="group" data-caption=""><i><img src="images/06.jpg" alt=""></i></a></li>
+</ul>
+</div>
+<div class="diggit">
+<a href="JavaScript:makeRequest('http://cj.ip3q.com/e/public/digg/?classid=6&id=12&dotop=1&doajax=1&ajaxarea=diggnum','EchoReturnedText','GET','');">很赞哦！ (<b id="diggnum"><script type="text/javascript">document.write('28');</script></b>)</a> </div>
+<div class="clear"></div>
+<div class="album_next">
+<ul>
+<li><a href="photos-info.html" target="_blank"><span>上一个</span><i><img src="images/07.jpg"></i>
+<h3>恋物主义</h3>
+<p>2021-05-22创建</p>
+</a></li>
+<li><a href="photos-info.html" target="_blank"><span>下一个</span><i><img src="images/08.jpg"></i>
+<h3>郁金香</h3>
+<p>2021-05-22创建</p>
+</a></li>
+</ul>
+</div>
+</div>
+<div class="clear"></div>
+<div class="pinglun">
+<div class="pl-520am" data-id="12" data-classid="6" data-showhot="0"></div>
+</div>
+</div>
+<footer>
+<div class="box">
+<ul class="footer_nav">
+<li><a href="/" target="_blank">网站地图</a></li>
+<li><a href="all_list.html" target="_blank">所有文章</a></li>
+<li><a href="tags.html" target="_blank">标签合集</a></li>
+<li><a href="/" target="_blank">访问统计</a></li>
+</ul>
+<div class="guanzhu_img"><i><img src="images/wx.png" alt="微信:4768447113">微信号</i> <i><img src="images/wxgzh.jpg" alt="微信:4768447113">微信公众号</i></div>
+<div class="copyright">
+<p>杨青青个人博客网站 版权所有 </p>
+<p>Copyright © <a href="Http://www.bootstrapmb.com" target="_blank">www.qingqingblog.com</a> All Rights Reserved.</p>
+<p>备案号：<a href="http://www.beian.miit.gov.cn/" target="_blank">津ICP备20005778号-1</a><i class="ga"><img src="images/ga.png" alt="公安备案号"></i>津公网安备 12011602000448 号</p>
+</div>
+</div>
+</footer>
+<a href="#" title="返回顶部" class="icon-top"></a>
+</body>
+</html>
