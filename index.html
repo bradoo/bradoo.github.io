@@ -9,10 +9,73 @@
     <meta name="description" content="吴勇的个人主页 - 全栈工程师、系统架构师，热爱跑步、演讲和阅读。分享技术、生活与成长的点滴。">
     <meta name="author" content="吴勇">
     <meta name="theme-color" content="#667eea">
+    
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/logo.png">
-    <link href="css/new-style.css" rel="stylesheet">
+    <link rel="apple-touch-icon" href="images/logo.png">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://bradoo.github.io/">
+    <meta property="og:title" content="吴勇 - 全栈工程师 | 跑者 | 演讲者">
+    <meta property="og:description" content="吴勇的个人主页 - 全栈工程师、系统架构师，热爱跑步、演讲和阅读。分享技术、生活与成长的点滴。">
+    <meta property="og:image" content="https://bradoo.github.io/images/brad.jpg">
+    <meta property="og:locale" content="zh_CN">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://bradoo.github.io/">
+    <meta name="twitter:title" content="吴勇 - 全栈工程师 | 跑者 | 演讲者">
+    <meta name="twitter:description" content="吴勇的个人主页 - 全栈工程师、系统架构师，热爱跑步、演讲和阅读。">
+    <meta name="twitter:image" content="https://bradoo.github.io/images/brad.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://bradoo.github.io/">
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="吴勇的博客" href="/feed.xml">
+    
+    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts with display swap -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link href="css/new-style.css" rel="stylesheet">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "吴勇",
+        "url": "https://bradoo.github.io",
+        "image": "https://bradoo.github.io/images/brad.jpg",
+        "jobTitle": "全栈工程师",
+        "worksFor": {
+            "@type": "Organization",
+            "name": "自由职业"
+        },
+        "sameAs": [
+            "https://github.com/bradoo"
+        ],
+        "description": "全栈工程师、系统架构师、马拉松跑者、公众演讲者",
+        "knowsAbout": ["软件开发", "系统架构", "马拉松", "公众演讲", "阅读"],
+        "email": "46326357@qq.com",
+        "telephone": "+86-138-4112-7361",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "大连",
+            "addressRegion": "辽宁",
+            "addressCountry": "CN"
+        }
+    }
+    </script>
 </head>
 <body>
     <!-- 导航栏 -->
@@ -314,7 +377,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 吴勇. All Rights Reserved. | <a href="https://bradoo.github.io" target="_blank">bradoo.github.io</a></p>
+                <p>&copy; 2026 吴勇. All Rights Reserved. | <a href="https://bradoo.github.io" target="_blank">bradoo.github.io</a></p>
             </div>
         </div>
     </footer>
@@ -327,5 +390,93 @@
     </button>
 
     <script src="js/new-script.js"></script>
+    
+    <!-- Service Worker 注册 -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('✅ Service Worker 注册成功:', registration.scope);
+                        
+                        // 检查更新
+                        registration.addEventListener('updatefound', () => {
+                            const newWorker = registration.installing;
+                            newWorker.addEventListener('statechange', () => {
+                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                                    // 新版本可用，提示用户刷新
+                                    if (confirm('发现新版本！点击确定刷新页面以获取最新内容。')) {
+                                        window.location.reload();
+                                    }
+                                }
+                            });
+                        });
+                    })
+                    .catch(error => {
+                        console.log('❌ Service Worker 注册失败:', error);
+                    });
+            });
+        }
+        
+        // PWA 安装提示
+        let deferredPrompt;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            console.log('💡 可以安装此应用到主屏幕');
+        });
+        
+        window.addEventListener('appinstalled', () => {
+            console.log('✅ PWA 已安装');
+            deferredPrompt = null;
+        });
+    </script>
+    
+    <!-- Google Analytics (替换为您的跟踪ID) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'page_title': document.title,
+            'page_location': window.location.href,
+            'page_path': window.location.pathname
+        });
+        
+        // 自定义事件跟踪
+        document.addEventListener('DOMContentLoaded', () => {
+            // 跟踪外部链接点击
+            document.querySelectorAll('a[href^="http"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    gtag('event', 'click', {
+                        'event_category': 'outbound',
+                        'event_label': e.target.href
+                    });
+                });
+            });
+            
+            // 跟踪按钮点击
+            document.querySelectorAll('.btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    gtag('event', 'click', {
+                        'event_category': 'button',
+                        'event_label': e.target.textContent
+                    });
+                });
+            });
+        });
+    </script>
+    
+    <!-- 百度统计 (替换为您的统计代码) -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?YOUR_BAIDU_ANALYTICS_ID";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 </body>
 </html>

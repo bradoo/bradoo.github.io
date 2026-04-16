@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    
+    <!-- 主页 -->
+    <url>
+        <loc>https://bradoo.github.io/</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+    
+    <!-- 博客页面 -->
+    <url>
+        <loc>https://bradoo.github.io/blog.html</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <!-- 关于页面 -->
+    <url>
+        <loc>https://bradoo.github.io/about.html</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- 相册页面 -->
+    <url>
+        <loc>https://bradoo.github.io/photos.html</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- 标签页面 -->
+    <url>
+        <loc>https://bradoo.github.io/tags.html</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- 演讲文稿 -->
+    <url>
+        <loc>https://bradoo.github.io/speeches/20240205.html</loc>
+        <lastmod>2024-02-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- SRE书籍 -->
+    <url>
+        <loc>https://bradoo.github.io/sre-book/</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- 交互式表情计算器 -->
+    <url>
+        <loc>https://bradoo.github.io/iec/</loc>
+        <lastmod>2026-04-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    
+</urlset>
+
+<!-- Made with Bob -->

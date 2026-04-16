@@ -1,0 +1,37 @@
+# robots.txt for bradoo.github.io
+# 吴勇的个人主页
+
+User-agent: *
+Allow: /
+
+# 禁止爬取的目录
+Disallow: /css/
+Disallow: /js/
+Disallow: /.git/
+Disallow: /.vscode/
+
+# 允许爬取的特定文件
+Allow: /css/new-style.css
+Allow: /js/new-script.js
+
+# Sitemap位置
+Sitemap: https://bradoo.github.io/sitemap.xml
+
+# 爬取延迟（毫秒）
+Crawl-delay: 1
+
+# 特定搜索引擎规则
+User-agent: Googlebot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Sogou web spider
+Allow: /
+
+User-agent: 360Spider
+Allow: /

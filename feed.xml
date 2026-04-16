@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" 
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/">
+    <channel>
+        <title>吴勇的个人博客</title>
+        <link>https://bradoo.github.io/</link>
+        <description>全栈工程师、系统架构师、马拉松跑者的个人博客 - 分享技术、跑步、演讲和读书心得</description>
+        <language>zh-CN</language>
+        <lastBuildDate>Wed, 16 Apr 2026 12:00:00 +0800</lastBuildDate>
+        <atom:link href="https://bradoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
+        <image>
+            <url>https://bradoo.github.io/images/logo.png</url>
+            <title>吴勇的个人博客</title>
+            <link>https://bradoo.github.io/</link>
+        </image>
+        
+        <!-- 文章1: 马拉松 -->
+        <item>
+            <title>我的第1个全程马拉松: 2017年大长山岛马拉松</title>
+            <link>https://bradoo.github.io/running/20170910.html</link>
+            <guid>https://bradoo.github.io/running/20170910.html</guid>
+            <pubDate>Sun, 10 Sep 2017 08:00:00 +0800</pubDate>
+            <dc:creator>吴勇</dc:creator>
+            <category>奔跑日记</category>
+            <description>人生第一个全马，从零开始的挑战之旅。42.195公里，不仅是距离的突破，更是心理的蜕变...</description>
+            <content:encoded><![CDATA[
+                <p>人生第一个全马，从零开始的挑战之旅。42.195公里，不仅是距离的突破，更是心理的蜕变。</p>
+                <p>在大长山岛的美丽海岸线上，我完成了人生中第一个全程马拉松。这不仅是一次体能的考验，更是一次心灵的洗礼。</p>
+            ]]></content:encoded>
+        </item>
+        
+        <!-- 文章2: 演讲 -->
+        <item>
+            <title>我在西安做家教的日子</title>
+            <link>https://bradoo.github.io/speeches/20240205.html</link>
+            <guid>https://bradoo.github.io/speeches/20240205.html</guid>
+            <pubDate>Mon, 05 Feb 2024 10:00:00 +0800</pubDate>
+            <dc:creator>吴勇</dc:creator>
+            <category>演讲文稿</category>
+            <description>回忆那段青葱岁月，分享成长中的点点滴滴...</description>
+            <content:encoded><![CDATA[
+                <p>回忆那段青葱岁月，分享成长中的点点滴滴。</p>
+                <p>在西安做家教的那段时光，是我人生中最宝贵的经历之一。它不仅让我学会了如何与人沟通，更让我明白了教育的真谛。</p>
+            ]]></content:encoded>
+        </item>
+        
+        <!-- 文章3: 读书 -->
+        <item>
+            <title>被讨厌的勇气</title>
+            <link>https://bradoo.github.io/reading/courage.html</link>
+            <guid>https://bradoo.github.io/reading/courage.html</guid>
+            <pubDate>Tue, 06 Feb 2024 14:00:00 +0800</pubDate>
+            <dc:creator>吴勇</dc:creator>
+            <category>读书笔记</category>
+            <description>阿德勒心理学的智慧，教会我们如何活出真实的自己...</description>
+            <content:encoded><![CDATA[
+                <p>阿德勒心理学的智慧，教会我们如何活出真实的自己。</p>
+                <p>这本书让我重新思考了人际关系、自我价值和人生意义。它告诉我们，真正的自由来自于接纳自己，勇敢地做自己。</p>
+            ]]></content:encoded>
+        </item>
+        
+        <!-- 文章4: 技术分享 -->
+        <item>
+            <title>全栈工程师的成长之路</title>
+            <link>https://bradoo.github.io/blog.html</link>
+            <guid>https://bradoo.github.io/blog-tech-growth</guid>
+            <pubDate>Wed, 16 Apr 2026 09:00:00 +0800</pubDate>
+            <dc:creator>吴勇</dc:creator>
+            <category>技术分享</category>
+            <description>分享10年全栈开发经验，从初级到架构师的成长历程...</description>
+            <content:encoded><![CDATA[
+                <p>作为一名拥有10年经验的全栈工程师，我想分享一些成长过程中的心得体会。</p>
+                <p>从最初的前端开发，到后端架构设计，再到系统架构师，每一步都充满了挑战和收获。技术的道路没有捷径，只有不断学习和实践。</p>
+            ]]></content:encoded>
+        </item>
+        
+        <!-- 文章5: 跑步心得 -->
+        <item>
+            <title>马拉松训练心得：从0到42公里</title>
+            <link>https://bradoo.github.io/running/training-tips.html</link>
+            <guid>https://bradoo.github.io/running-training-tips</guid>
+            <pubDate>Mon, 15 Apr 2026 07:00:00 +0800</pubDate>
+            <dc:creator>吴勇</dc:creator>
+            <category>奔跑日记</category>
+            <description>完成6场全马后的训练经验总结，帮助跑步新手科学训练...</description>
+            <content:encoded><![CDATA[
+                <p>经过6场全程马拉松的洗礼，我总结了一些训练心得，希望能帮助到想要挑战马拉松的朋友们。</p>
+                <p>马拉松不仅是体能的考验，更是意志力的磨练。科学的训练计划、合理的饮食搭配、充足的休息恢复，这三者缺一不可。</p>
+            ]]></content:encoded>
+        </item>
+        
+    </channel>
+</rss>
+
+<!-- Made with Bob -->

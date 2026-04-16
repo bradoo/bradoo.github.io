@@ -1,0 +1,35 @@
+{
+  "name": "吴勇的个人主页",
+  "short_name": "吴勇",
+  "description": "全栈工程师、系统架构师、马拉松跑者的个人主页",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "images/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["lifestyle", "education", "sports"],
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "scope": "/",
+  "screenshots": [
+    {
+      "src": "images/brad.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg"
+    }
+  ]
+}
