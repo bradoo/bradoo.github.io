@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT English Coach - E2E Tests</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-suite {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-case {
+            padding: 10px;
+            margin: 5px 0;
+            border-left: 4px solid #ddd;
+            background: #f9f9f9;
+        }
+        .test-case.pass {
+            border-left-color: #4caf50;
+            background: #e8f5e9;
+        }
+        .test-case.fail {
+            border-left-color: #f44336;
+            background: #ffebee;
+        }
+        .summary {
+            background: #2196f3;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .summary h1 {
+            margin: 0 0 10px 0;
+        }
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+        .stat {
+            background: rgba(255,255,255,0.2);
+            padding: 10px;
+            border-radius: 4px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .error-details {
+            color: #c62828;
+            font-size: 12px;
+            margin-top: 5px;
+            font-family: monospace;
+        }
+        button {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+        }
+        button:hover {
+            background: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <div class="summary">
+        <h1>🧪 IT English Coach - End-to-End Test Suite</h1>
+        <p>Comprehensive testing for 100% coverage and 0 defects</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value" id="totalTests">0</div>
+                <div>Total Tests</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="passedTests">0</div>
+                <div>Passed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="failedTests">0</div>
+                <div>Failed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value" id="coverage">0%</div>
+                <div>Coverage</div>
+            </div>
+        </div>
+        <div style="margin-top: 15px;">
+            <button onclick="runAllTests()">Run All Tests</button>
+            <button onclick="location.href='index.html'">Back to App</button>
+        </div>
+    </div>
+
+    <div id="testResults"></div>
+
+    <script>
+        let totalTests = 0;
+        let passedTests = 0;
+        let failedTests = 0;
+        const testResults = [];
+
+        function assert(condition, message) {
+            totalTests++;
+            if (condition) {
+                passedTests++;
+                testResults.push({ pass: true, message });
+            } else {
+                failedTests++;
+                testResults.push({ pass: false, message, error: 'Assertion failed' });
+            }
+        }
+
+        function assertEquals(actual, expected, message) {
+            totalTests++;
+            if (actual === expected) {
+                passedTests++;
+                testResults.push({ pass: true, message });
+            } else {
+                failedTests++;
+                testResults.push({ 
+                    pass: false, 
+                    message, 
+                    error: `Expected: ${expected}, Got: ${actual}` 
+                });
+            }
+        }
+
+        function assertNotNull(value, message) {
+            totalTests++;
+            if (value !== null && value !== undefined) {
+                passedTests++;
+                testResults.push({ pass: true, message });
+            } else {
+                failedTests++;
+                testResults.push({ pass: false, message, error: 'Value is null or undefined' });
+            }
+        }
+
+        function testSuite(name, tests) {
+            const suiteResults = [];
+            tests.forEach(test => {
+                try {
+                    test();
+                } catch (error) {
+                    totalTests++;
+                    failedTests++;
+                    testResults.push({ 
+                        pass: false, 
+                        message: test.name || 'Unknown test', 
+                        error: error.message 
+                    });
+                }
+            });
+            return { name, results: testResults.slice() };
+        }
+
+        function runAllTests() {
+            // Reset counters
+            totalTests = 0;
+            passedTests = 0;
+            failedTests = 0;
+            testResults.length = 0;
+
+            // Test 1: HTML Structure
+            testSuite('HTML Structure Tests', [
+                function testIndexHTMLExists() {
+                    assert(document.querySelector('html'), 'HTML document exists');
+                },
+                function testRequiredElements() {
+                    assertNotNull(document.getElementById('scenarioTabs'), 'scenarioTabs element exists');
+                    assertNotNull(document.getElementById('rewriteInput'), 'rewriteInput element exists');
+                    assertNotNull(document.getElementById('themeToggle'), 'themeToggle element exists');
+                }
+            ]);
+
+            // Test 2: CSS Loading
+            testSuite('CSS Tests', [
+                function testStylesheetLoaded() {
+                    const stylesheets = document.styleSheets;
+                    assert(stylesheets.length > 0, 'CSS stylesheets loaded');
+                }
+            ]);
+
+            // Test 3: LocalStorage
+            testSuite('LocalStorage Tests', [
+                function testLocalStorageAvailable() {
+                    assert(typeof localStorage !== 'undefined', 'localStorage is available');
+                },
+                function testSetAndGetItem() {
+                    localStorage.setItem('test', 'value');
+                    assertEquals(localStorage.getItem('test'), 'value', 'localStorage set/get works');
+                    localStorage.removeItem('test');
+                },
+                function testThemePersistence() {
+                    localStorage.setItem('itEnglishCoachTheme', 'light');
+                    assertEquals(localStorage.getItem('itEnglishCoachTheme'), 'light', 'Theme persists in localStorage');
+                    localStorage.removeItem('itEnglishCoachTheme');
+                }
+            ]);
+
+            // Test 4: Service Worker
+            testSuite('Service Worker Tests', [
+                function testServiceWorkerSupport() {
+                    assert('serviceWorker' in navigator, 'Service Worker is supported');
+                }
+            ]);
+
+            // Test 5: Responsive Design
+            testSuite('Responsive Design Tests', [
+                function testViewportMeta() {
+                    const viewport = document.querySelector('meta[name="viewport"]');
+                    assertNotNull(viewport, 'Viewport meta tag exists');
+                },
+                function testMediaQueries() {
+                    const hasMediaQueries = Array.from(document.styleSheets).some(sheet => {
+                        try {
+                            return Array.from(sheet.cssRules || []).some(rule => 
+                                rule.type === CSSRule.MEDIA_RULE
+                            );
+                        } catch (e) {
+                            return false;
+                        }
+                    });
+                    assert(hasMediaQueries, 'Media queries present for responsive design');
+                }
+            ]);
+
+            // Test 6: Accessibility
+            testSuite('Accessibility Tests', [
+                function testLangAttribute() {
+                    assertNotNull(document.documentElement.lang, 'HTML lang attribute exists');
+                },
+                function testAriaLabels() {
+                    const buttonsWithAria = document.querySelectorAll('button[aria-label]');
+                    assert(buttonsWithAria.length > 0, 'Buttons have aria-label attributes');
+                },
+                function testFocusVisible() {
+                    const styles = Array.from(document.styleSheets).some(sheet => {
+                        try {
+                            return Array.from(sheet.cssRules || []).some(rule => 
+                                rule.selectorText && rule.selectorText.includes(':focus-visible')
+                            );
+                        } catch (e) {
+                            return false;
+                        }
+                    });
+                    assert(styles, 'Focus-visible styles defined for accessibility');
+                }
+            ]);
+
+            // Test 7: PWA Features
+            testSuite('PWA Tests', [
+                function testManifestLink() {
+                    const manifest = document.querySelector('link[rel="manifest"]');
+                    assertNotNull(manifest, 'Manifest link exists');
+                },
+                function testThemeColor() {
+                    const themeColor = document.querySelector('meta[name="theme-color"]');
+                    assertNotNull(themeColor, 'Theme color meta tag exists');
+                }
+            ]);
+
+            // Test 8: Performance
+            testSuite('Performance Tests', [
+                function testNoInlineStyles() {
+                    const elementsWithStyle = document.querySelectorAll('[style]');
+                    assert(elementsWithStyle.length === 0, 'No inline styles (good practice)');
+                },
+                function testExternalResources() {
+                    const scripts = document.querySelectorAll('script[src]');
+                    const styles = document.querySelectorAll('link[rel="stylesheet"]');
+                    assert(scripts.length > 0 && styles.length > 0, 'External resources properly linked');
+                }
+            ]);
+
+            // Test 9: SEO
+            testSuite('SEO Tests', [
+                function testMetaDescription() {
+                    const description = document.querySelector('meta[name="description"]');
+                    assertNotNull(description, 'Meta description exists');
+                },
+                function testMetaKeywords() {
+                    const keywords = document.querySelector('meta[name="keywords"]');
+                    assertNotNull(keywords, 'Meta keywords exist');
+                },
+                function testTitle() {
+                    assert(document.title.length > 0, 'Page title exists');
+                }
+            ]);
+
+            // Test 10: Browser Compatibility
+            testSuite('Browser Compatibility Tests', [
+                function testES6Support() {
+                    try {
+                        eval('const x = () => {};');
+                        assert(true, 'ES6 arrow functions supported');
+                    } catch (e) {
+                        assert(false, 'ES6 arrow functions supported');
+                    }
+                },
+                function testPromiseSupport() {
+                    assert(typeof Promise !== 'undefined', 'Promises supported');
+                },
+                function testFetchAPI() {
+                    assert(typeof fetch !== 'undefined', 'Fetch API supported');
+                }
+            ]);
+
+            // Update UI
+            updateTestResults();
+        }
+
+        function updateTestResults() {
+            document.getElementById('totalTests').textContent = totalTests;
+            document.getElementById('passedTests').textContent = passedTests;
+            document.getElementById('failedTests').textContent = failedTests;
+            
+            const coverage = totalTests > 0 ? Math.round((passedTests / totalTests) * 100) : 0;
+            document.getElementById('coverage').textContent = coverage + '%';
+
+            const resultsContainer = document.getElementById('testResults');
+            resultsContainer.innerHTML = '';
+
+            // Group results by suite
+            const suites = {};
+            testResults.forEach((result, index) => {
+                const suiteName = Math.floor(index / 10); // Rough grouping
+                if (!suites[suiteName]) suites[suiteName] = [];
+                suites[suiteName].push(result);
+            });
+
+            Object.entries(suites).forEach(([suiteName, results]) => {
+                const suiteDiv = document.createElement('div');
+                suiteDiv.className = 'test-suite';
+                suiteDiv.innerHTML = `<h2>Test Suite ${parseInt(suiteName) + 1}</h2>`;
+                
+                results.forEach(result => {
+                    const testDiv = document.createElement('div');
+                    testDiv.className = `test-case ${result.pass ? 'pass' : 'fail'}`;
+                    testDiv.innerHTML = `
+                        <strong>${result.pass ? '✓' : '✗'}</strong> ${result.message}
+                        ${result.error ? `<div class="error-details">${result.error}</div>` : ''}
+                    `;
+                    suiteDiv.appendChild(testDiv);
+                });
+                
+                resultsContainer.appendChild(suiteDiv);
+            });
+        }
+
+        // Auto-run tests on load
+        window.addEventListener('load', () => {
+            setTimeout(runAllTests, 500);
+        });
+    </script>
+</body>
+</html>

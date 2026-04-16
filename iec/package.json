@@ -1,0 +1,40 @@
+{
+  "name": "it-english-coach",
+  "version": "1.0.0",
+  "description": "面向 IT 外企员工的工作英语提升平台",
+  "main": "script.js",
+  "scripts": {
+    "test": "jest --coverage --verbose",
+    "test:watch": "jest --watch",
+    "test:ui": "jest --testPathPattern=test.ui.js",
+    "test:unit": "jest --testPathPattern=test.unit.js",
+    "test:integration": "jest --testPathPattern=test.integration.js"
+  },
+  "keywords": ["IT", "English", "Learning", "PWA"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@jest/globals": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "script.js",
+      "sw.js"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "testMatch": [
+      "**/*.test.js"
+    ]
+  }
+}

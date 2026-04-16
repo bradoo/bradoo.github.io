@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="面向 IT 外企员工的工作英语提升平台，聚焦站会、邮件、代码评审等高频场景">
+    <meta name="keywords" content="IT英语,外企英语,工作英语,职场英语,英语学习">
+    <meta name="theme-color" content="#6ea8fe">
+    <title>IT English Coach - 外企工作英语提升助手</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.enhanced.css">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="app-shell">
+        <header class="hero">
+            <nav class="topbar">
+                <div class="brand">
+                    <div class="brand-badge">IE</div>
+                    <div>
+                        <p class="brand-title">IT English Coach</p>
+                        <p class="brand-subtitle">外企 IT 员工工作英语训练平台</p>
+                    </div>
+                </div>
+                <div class="topbar-actions">
+                    <button id="themeToggle" class="ghost-btn" aria-label="切换深色/浅色主题">切换主题</button>
+                    <button id="dailyFocusBtn" class="primary-btn" aria-label="查看今日学习重点">查看今日重点</button>
+                </div>
+            </nav>
+
+            <section class="quick-tools section-card" aria-label="学习工具栏">
+                <div class="quick-tools-header">
+                    <div>
+                        <p class="section-kicker">快捷工具</p>
+                        <h2>把高频练习放到手边</h2>
+                    </div>
+                    <p class="section-note">快速查看收藏、导出进度、随机抽题与进入表达训练。</p>
+                </div>
+                <div class="quick-tool-actions">
+                    <button id="showFavoritesBtn" class="secondary-btn" aria-label="查看已收藏表达">查看收藏</button>
+                    <button id="randomPracticeBtn" class="secondary-btn" aria-label="随机切换一个练习场景">随机练习</button>
+                    <button id="exportProgressBtn" class="ghost-btn" aria-label="导出当前学习进度">导出进度</button>
+                    <button id="importProgressBtn" class="ghost-btn" aria-label="导入学习进度">导入进度</button>
+                    <input id="importProgressInput" type="file" accept=".json" hidden aria-label="导入进度文件">
+                </div>
+                <div class="quick-link-actions" aria-label="页面快捷导航">
+                    <a class="text-link-chip" href="#scenarios">场景学习</a>
+                    <a class="text-link-chip" href="#rewrite">邮件改写</a>
+                    <a class="text-link-chip" href="#expressions">会议表达</a>
+                    <a class="text-link-chip" href="#speaking">口语练习</a>
+                    <a class="text-link-chip" href="#quiz">快速测验</a>
+                    <a class="text-link-chip" href="#plan">学习计划</a>
+                </div>
+            </section>
+
+            <section class="hero-content">
+                <div class="hero-text">
+                    <span class="eyebrow">Speak clearly. Write professionally. Work globally.</span>
+                    <h1>帮助 IT 外企员工系统提升工作英语</h1>
+                    <p class="hero-description">
+                        聚焦站会、邮件、代码评审、客户沟通、故障协作等高频场景，
+                        用更真实的表达、更可执行的练习，帮助你把英语变成工作能力。
+                    </p>
+                    <div class="hero-actions">
+                        <button id="startLearningBtn" class="primary-btn" aria-label="开始今日学习">开始今日学习</button>
+                        <button id="jumpRewriteBtn" class="secondary-btn" aria-label="跳转到邮件改写练习">练习邮件改写</button>
+                    </div>
+                    <ul class="hero-highlights">
+                        <li>场景化句型</li>
+                        <li>会议表达训练</li>
+                        <li>邮件与消息优化</li>
+                        <li>7 天学习计划</li>
+                    </ul>
+                </div>
+
+                <div class="hero-panel">
+                    <div class="focus-card">
+                        <p class="card-label">Today's Focus</p>
+                        <h2 id="focusTitle">Daily Standup Update</h2>
+                        <p id="focusDescription">练习如何简洁表达昨天做了什么、今天做什么、是否有 blocker。</p>
+                        <div class="focus-tags">
+                            <span>Standup</span>
+                            <span>Clarity</span>
+                            <span>Confidence</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </header>
+
+        <main class="main-content">
+            <section class="dashboard section-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">学习概览</p>
+                        <h2>今天的英语成长面板</h2>
+                    </div>
+                    <p class="section-note">从高频工作场景出发，坚持每天 10 分钟。</p>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card">
+                        <span class="stat-label">连续学习</span>
+                        <strong class="stat-value" id="streakValue">6 天</strong>
+                        <p>保持节奏，强化输出习惯</p>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-label">今日目标</span>
+                        <strong class="stat-value">4 / 5</strong>
+                        <p>完成一个改写练习即可达标</p>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-label">掌握句型</span>
+                        <strong class="stat-value">128</strong>
+                        <p>覆盖站会、邮件、会议与协作</p>
+                    </article>
+                    <article class="stat-card">
+                        <span class="stat-label">信心指数</span>
+                        <strong class="stat-value">82%</strong>
+                        <p>本周表达清晰度持续上升</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="scenarios section-card" id="scenarios">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">场景学习</p>
+                        <h2>高频 IT 外企沟通场景</h2>
+                    </div>
+                    <p class="section-note">点击场景即可查看目标、句型、替换表达与使用建议。</p>
+                </div>
+
+                <div class="scenario-tabs" id="scenarioTabs"></div>
+
+                <div class="scenario-detail" id="scenarioDetail">
+                    <div class="scenario-main">
+                        <div class="scenario-header">
+                            <h3 id="scenarioTitle"></h3>
+                            <span class="level-badge" id="scenarioLevel"></span>
+                        </div>
+                        <p class="scenario-goal" id="scenarioGoal"></p>
+                        <div class="scenario-block">
+                            <h4>高频句型</h4>
+                            <ul id="scenarioPhrases" class="bullet-list"></ul>
+                        </div>
+                        <div class="scenario-block">
+                            <h4>可替换表达</h4>
+                            <ul id="scenarioAlternatives" class="bullet-list"></ul>
+                        </div>
+                    </div>
+                    <aside class="scenario-sidebar">
+                        <div class="side-card">
+                            <h4>中文提示</h4>
+                            <p id="scenarioTip"></p>
+                        </div>
+                        <div class="side-card">
+                            <h4>使用建议</h4>
+                            <p id="scenarioAdvice"></p>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="rewrite section-card" id="rewrite">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">改写助手</p>
+                        <h2>把“能看懂”升级为“更职业地表达”</h2>
+                    </div>
+                    <p class="section-note">输入中文或基础英文句子，查看更自然的职场英文版本。</p>
+                </div>
+
+                <div class="rewrite-grid">
+                    <div class="rewrite-panel">
+                        <label for="rewriteInput">输入你想表达的话</label>
+                        <textarea id="rewriteInput"
+                                  placeholder="例如：我今天会先修复登录问题，下午给你更新进度。"
+                                  aria-label="输入需要改写的中文或英文句子"></textarea>
+                        <div class="rewrite-actions">
+                            <button id="rewriteBtn" class="primary-btn" aria-label="生成职业英文表达">生成职业表达</button>
+                            <button id="loadSampleBtn" class="secondary-btn" aria-label="载入示例句子">载入示例</button>
+                        </div>
+                    </div>
+
+                    <div class="rewrite-output">
+                        <div class="output-card">
+                            <p class="output-label">Professional English</p>
+                            <p id="rewriteResult" class="output-text">
+                                I’ll first work on the login issue today and share an update with you this afternoon.
+                            </p>
+                        </div>
+                        <div class="output-card">
+                            <p class="output-label">表达说明</p>
+                            <ul id="rewriteTips" class="bullet-list compact-list">
+                                <li>用 I’ll first work on... 体现清晰行动顺序。</li>
+                                <li>用 share an update 更符合外企语境。</li>
+                                <li>this afternoon 比 later today 更具体。</li>
+                            </ul>
+                            <div class="rewrite-feedback" id="rewriteFeedback">
+                                <div class="feedback-chip">
+                                    <span class="feedback-label">语气</span>
+                                    <strong id="feedbackTone">Professional</strong>
+                                </div>
+                                <div class="feedback-chip">
+                                    <span class="feedback-label">适用场景</span>
+                                    <strong id="feedbackScenario">Daily update</strong>
+                                </div>
+                                <div class="feedback-chip">
+                                    <span class="feedback-label">建议动作</span>
+                                    <strong id="feedbackAction">Send in chat or email</strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="day-two section-card" id="day2">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Day 2 专项训练</p>
+                        <h2>邮件与即时消息改写实战</h2>
+                    </div>
+                    <p class="section-note">围绕 update、delay、request、follow-up 四类高频工作沟通，完成 3 步练习。</p>
+                </div>
+
+                <div class="day-two-layout">
+                    <article class="day-two-overview">
+                        <p class="output-label">Today’s Mission</p>
+                        <h3>把“中式直译”改成自然、职业、能直接发出的英文</h3>
+                        <ul class="bullet-list compact-list" id="day2Goals">
+                            <li>识别 update、risk、request、follow-up 四种沟通目的。</li>
+                            <li>先写清楚动作、时间和下一步，再补充语气优化。</li>
+                            <li>完成 3 条改写练习后，挑 1 条直接用于今天的工作沟通。</li>
+                        </ul>
+                        <div class="day-two-tags">
+                            <span>Chat update</span>
+                            <span>Email clarity</span>
+                            <span>Action-oriented</span>
+                        </div>
+                    </article>
+
+                    <article class="day-two-practice">
+                        <div class="day-two-card-header">
+                            <div>
+                                <p class="output-label">Practice Prompt</p>
+                                <h3 id="day2PromptTitle">进度同步</h3>
+                            </div>
+                            <span class="level-badge" id="day2PromptType">Update</span>
+                        </div>
+                        <p id="day2PromptSource" class="day-two-source">中文原句：这个任务我今天下午完成后同步给你。</p>
+                        <div class="day-two-actions">
+                            <button id="day2PrevBtn" class="secondary-btn" aria-label="查看上一条 Day 2 练习">上一题</button>
+                            <button id="day2NextBtn" class="secondary-btn" aria-label="查看下一条 Day 2 练习">下一题</button>
+                            <button id="day2UsePromptBtn" class="primary-btn" aria-label="把当前练习题载入改写输入框">载入到改写区</button>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="day-two-grid">
+                    <article class="output-card">
+                        <p class="output-label">Recommended Rewrite</p>
+                        <p id="day2RewriteResult" class="output-text">I’ll complete this task this afternoon and share an update with you right after that.</p>
+                    </article>
+                    <article class="output-card">
+                        <p class="output-label">Why It Works</p>
+                        <ul id="day2CoachTips" class="bullet-list compact-list">
+                            <li>先说明完成时间，再说明你会如何同步。</li>
+                            <li>share an update 比 tell you 更职业。</li>
+                            <li>right after that 让下一步动作更明确。</li>
+                        </ul>
+                    </article>
+                </div>
+            </section>
+
+            <section class="expressions section-card" id="expressions">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">会议表达</p>
+                        <h2>开会时更自然、更得体</h2>
+                    </div>
+                    <p class="section-note">按沟通目的分类，快速找到你需要的表达。</p>
+                </div>
+
+                <div class="expression-groups" id="expressionGroups"></div>
+            </section>
+
+            <section class="speaking section-card" id="speaking">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">口语练习</p>
+                        <h2>跟读卡片：练习发音与语感</h2>
+                    </div>
+                    <p class="section-note">每次专注一句，练习节奏、重音与使用时机。</p>
+                </div>
+
+                <div class="speaking-card" id="speakingCard">
+                    <p class="speaking-label">Speak Aloud</p>
+                    <h3 id="speakingSentence"></h3>
+                    <p id="speakingMeaning" class="speaking-meaning"></p>
+                    <p id="speakingPronunciation" class="speaking-pronunciation"></p>
+                    <p id="speakingUsage" class="speaking-usage"></p>
+                    <div class="speaking-actions">
+                        <button id="prevSpeakingBtn" class="secondary-btn" aria-label="查看上一句练习">上一句</button>
+                        <button id="nextSpeakingBtn" class="primary-btn" aria-label="查看下一句练习">下一句</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz section-card" id="quiz">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">快速测验</p>
+                        <h2>检验你对场景表达的理解</h2>
+                    </div>
+                    <p class="section-note">完成 1 题小测，巩固今天的学习重点。</p>
+                </div>
+
+                <div class="quiz-card">
+                    <p class="quiz-question" id="quizQuestion"></p>
+                    <div class="quiz-options" id="quizOptions"></div>
+                    <p class="quiz-feedback" id="quizFeedback"></p>
+                </div>
+            </section>
+
+            <section class="plan section-card" id="plan">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">7 天学习计划</p>
+                        <h2>每天 10 分钟，稳步提升工作英语</h2>
+                    </div>
+                    <p class="section-note">建议从输入、模仿、输出三个维度并行训练。</p>
+                </div>
+
+                <div class="plan-list" id="planList"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="script.enhanced.js"></script>
+</body>
+</html>
