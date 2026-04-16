@@ -1,0 +1,241 @@
+/* 现代化样式增强 */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+
+/* 平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 优化字体渲染 */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+
+/* 现代化卡片效果 */
+.section, .mycard section, .featured_news, .blogs_list, .isgood_news, .hot_news {
+    transition: var(--transition);
+}
+
+.section:hover, .mycard:hover, .blogs_list:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* 优化按钮样式 */
+.read_more, .input_submit {
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.read_more::before, .input_submit::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.read_more:hover::before, .input_submit:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* 图片懒加载优化 */
+img {
+    transition: opacity 0.3s ease;
+}
+
+img[loading="lazy"] {
+    opacity: 0;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* 优化导航栏 */
+nav {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+nav ul li a {
+    position: relative;
+    transition: var(--transition);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--secondary-color);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* 优化轮播图 */
+.banner_box {
+    position: relative;
+    overflow: hidden;
+}
+
+.banner li {
+    transition: var(--transition);
+}
+
+.banner li:hover img {
+    transform: scale(1.05);
+}
+
+.banner li img {
+    transition: transform 0.5s ease;
+}
+
+/* 加载动画 */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* 骨架屏效果 */
+.skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* 优化表单输入 */
+input[type="text"], input[type="email"], textarea {
+    transition: var(--transition);
+    border: 2px solid #ddd;
+}
+
+input[type="text"]:focus, input[type="email"]:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+    outline: none;
+}
+
+/* 优化标签云 */
+.tags a {
+    transition: var(--transition);
+    display: inline-block;
+}
+
+.tags a:hover {
+    transform: scale(1.1);
+    background: var(--secondary-color);
+    color: white;
+}
+
+/* 返回顶部按钮优化 */
+.icon-top {
+    transition: var(--transition);
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icon-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.icon-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 响应式优化 */
+@media (max-width: 768px) {
+    .section:hover, .mycard:hover, .blogs_list:hover {
+        transform: none;
+    }
+    
+    nav ul li a::after {
+        display: none;
+    }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --primary-color: #ecf0f1;
+        --text-color: #ecf0f1;
+        --light-bg: #2c3e50;
+    }
+}
+
+/* 打印样式优化 */
+@media print {
+    .banner_box, nav, .icon-top, .search-page {
+        display: none;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+}
+
+/* 性能优化 - 使用 will-change */
+.banner li img, .section, .blogs_list {
+    will-change: transform;
+}
+
+/* 无障碍优化 */
+:focus-visible {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* 减少动画对于偏好减少动作的用户 */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Made with Bob */

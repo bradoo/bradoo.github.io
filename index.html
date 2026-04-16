@@ -1,15 +1,21 @@
 <!doctype html>
-<html>
+<html lang="zh-CN">
 <head>
 <meta charset="utf-8">
-<title>奔跑天力爱跑步</title>
-<meta name="keywords" content="演讲、跑步、小说" />
-<meta name="description" content="天力的个人生活分享（https://bradoo.github.io/）" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>吴勇的个人主页 - 奔跑天力爱跑步</title>
+<meta name="keywords" content="吴勇,演讲,跑步,马拉松,读书,个人博客,全栈工程师" />
+<meta name="description" content="吴勇的个人生活分享 - 记录跑步、演讲、读书的点点滴滴。全栈工程师、系统架构师，热爱马拉松和公众演讲。" />
+<meta name="author" content="吴勇">
+<meta name="theme-color" content="#3498db">
+<link rel="icon" type="image/png" href="images/logo.png">
 <link href="css/base.css" rel="stylesheet">
 <link href="css/m.css" rel="stylesheet">
-<script src="js/jquery-3.6.0.min.js"></script>
-<script src="js/comm.js"></script>
+<link href="css/modern.css" rel="stylesheet">
+<script src="js/jquery-3.6.0.min.js" defer></script>
+<script src="js/comm.js" defer></script>
+<script src="js/enhanced.js" defer></script>
 </head>
 <body>
 <header>
@@ -64,17 +70,17 @@
 <div class="ph_margin"></div>
 <div class="banner_box">
 <ul class="banner">
-<li><a href="/" target="_blank"><img src="images/01.jpg">
+<li><a href="/" target="_blank"><img src="images/01.jpg" alt="奔跑" loading="lazy">
 <section><span>奔跑</span>
 <p>奔跑练耐力，不怕遇挑战</p>
 </section>
 </a></li>
-<li><a href="/" target="_blank"><img src="images/02.jpg">
+<li><a href="/" target="_blank"><img src="images/02.jpg" alt="演讲" loading="lazy">
 <section><span>演讲</span>
 <p>演讲注动力，认知大改变</p>
 </section>
 </a></li>
-<li><a href="/" target="_blank"><img src="images/03.jpg">
+<li><a href="/" target="_blank"><img src="images/03.jpg" alt="读书" loading="lazy">
 <section><span>读书</span>
 <p>读书破万卷，下笔如有神</p>
 </section>
@@ -302,6 +308,59 @@
 </div>
 </div>
 </footer>
-<a href="#" title="返回顶部" class="icon-top"></a>
+<a href="#" title="返回顶部" class="icon-top" aria-label="返回顶部"></a>
+
+<script>
+// 页面加载完成后移除加载器
+window.addEventListener('load', function() {
+    const loader = document.getElementById('page-loader');
+    if (loader) {
+        loader.style.opacity = '0';
+        setTimeout(() => loader.remove(), 300);
+    }
+    
+    // 图片懒加载完成标记
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+        img.addEventListener('load', function() {
+            this.classList.add('loaded');
+        });
+    });
+    
+    // 返回顶部按钮显示/隐藏
+    const topBtn = document.querySelector('.icon-top');
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+            topBtn.classList.add('show');
+        } else {
+            topBtn.classList.remove('show');
+        }
+    });
+    
+    // 平滑滚动到顶部
+    topBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+    
+    // 添加淡入动画
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('fade-in-up');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    document.querySelectorAll('.blogs_list, .f_news_list li, .featured_pics li').forEach(el => {
+        observer.observe(el);
+    });
+});
+</script>
 </body>
 </html>
