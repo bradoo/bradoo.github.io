@@ -1,0 +1,61 @@
+{
+  "site": {
+    "title": "吴勇的个人主页",
+    "subtitle": "全栈工程师 · 系统架构师 · 马拉松跑者",
+    "author": "吴勇",
+    "email": "46326357@qq.com",
+    "url": "https://bradoo.github.io",
+    "description": "记录跑步、演讲、读书的点点滴滴",
+    "keywords": ["吴勇", "全栈工程师", "马拉松", "演讲", "读书"],
+    "language": "zh-CN",
+    "timezone": "Asia/Shanghai"
+  },
+  "paths": {
+    "content": "blog-generator/content",
+    "templates": "blog-generator/templates",
+    "output": ".",
+    "images": "images"
+  },
+  "categories": {
+    "running": {
+      "name": "奔跑日记",
+      "icon": "🏃",
+      "description": "记录马拉松训练和比赛经历",
+      "color": "#e74c3c"
+    },
+    "speech": {
+      "name": "演讲文稿",
+      "icon": "🎤",
+      "description": "分享公众演讲和个人成长",
+      "color": "#3498db"
+    },
+    "reading": {
+      "name": "读书笔记",
+      "icon": "📚",
+      "description": "记录阅读心得和思考",
+      "color": "#2ecc71"
+    },
+    "tech": {
+      "name": "技术分享",
+      "icon": "💻",
+      "description": "分享技术经验和见解",
+      "color": "#9b59b6"
+    }
+  },
+  "build": {
+    "generateSitemap": true,
+    "generateRSS": true,
+    "generateBlogList": true,
+    "minifyHTML": false,
+    "copyImages": true
+  },
+  "pagination": {
+    "postsPerPage": 10
+  },
+  "social": {
+    "github": "https://github.com/bradoo",
+    "qq": "46326357",
+    "wechat": "runnerbrad",
+    "phone": "+86-138-4112-7361"
+  }
+}
