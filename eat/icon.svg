@@ -1,0 +1,24 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#2196F3" rx="80"/>
+  
+  <!-- Coffee Cup -->
+  <g transform="translate(256, 256)">
+    <!-- Cup body -->
+    <path d="M -80 -40 L -60 80 L 60 80 L 80 -40 Z" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="4"/>
+    
+    <!-- Cup handle -->
+    <path d="M 80 0 Q 120 0 120 40 Q 120 80 80 80" fill="none" stroke="#FFFFFF" stroke-width="12" stroke-linecap="round"/>
+    
+    <!-- Steam -->
+    <path d="M -40 -60 Q -40 -100 -20 -100" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 0 -70 Q 0 -110 20 -110" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    <path d="M 40 -60 Q 40 -100 60 -100" fill="none" stroke="#FFFFFF" stroke-width="8" stroke-linecap="round" opacity="0.8"/>
+    
+    <!-- Text -->
+    <text x="0" y="140" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFFFFF" text-anchor="middle">English</text>
+    <text x="0" y="180" font-family="Arial, sans-serif" font-size="32" fill="#FFFFFF" text-anchor="middle" opacity="0.9">Tea Time</text>
+  </g>
+</svg>
+
+<!-- Made with Bob -->

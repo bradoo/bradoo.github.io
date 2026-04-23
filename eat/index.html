@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FutureNow English Afternoon Tea - 职场英语学习应用">
+    <meta name="theme-color" content="#2196F3">
+    <title>英语下午茶 | English Afternoon Tea</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-content">
+                <div>
+                    <h1>☕ 英语下午茶</h1>
+                    <p class="subtitle">English Afternoon Tea</p>
+                </div>
+                <button class="dark-mode-toggle" onclick="toggleDarkMode()" title="切换深色模式">
+                    🌙
+                </button>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="bottom-nav">
+            <button class="nav-item active" data-page="home">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">首页</span>
+            </button>
+            <button class="nav-item" data-page="checkin">
+                <span class="nav-icon">✅</span>
+                <span class="nav-label">签到</span>
+            </button>
+            <button class="nav-item" data-page="scenarios">
+                <span class="nav-icon">🎭</span>
+                <span class="nav-label">场景</span>
+            </button>
+            <button class="nav-item" data-page="vocabulary">
+                <span class="nav-icon">📚</span>
+                <span class="nav-label">词汇</span>
+            </button>
+            <button class="nav-item" data-page="profile">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">我的</span>
+            </button>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Home Page -->
+            <div id="home-page" class="page active">
+                <div class="welcome-card">
+                    <h2>欢迎参加英语下午茶！</h2>
+                    <p class="welcome-text">Welcome to English Afternoon Tea!</p>
+                </div>
+
+                <div class="event-info-card">
+                    <h3>📅 活动信息</h3>
+                    <div class="info-item">
+                        <span class="info-label">日期：</span>
+                        <span class="info-value">2026年4月24日 星期五</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">时间：</span>
+                        <span class="info-value">14:00 - 15:00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">地点：</span>
+                        <span class="info-value">SO3短边Pantry</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">参与人数：</span>
+                        <span class="info-value">28人</span>
+                    </div>
+                </div>
+
+                <div class="agenda-card">
+                    <h3>⏰ 活动日程</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:00-14:05</div>
+                            <div class="timeline-content">
+                                <h4>欢迎介绍</h4>
+                                <p>Welcome & Introduction</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:05-14:20</div>
+                            <div class="timeline-content">
+                                <h4>破冰环节</h4>
+                                <p>Ice-Breaking Activities</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:20-14:40</div>
+                            <div class="timeline-content">
+                                <h4>场景1: 面试</h4>
+                                <p>Scenario 1: Job Interview</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-time">14:40-15:00</div>
+                            <div class="timeline-content">
+                                <h4>场景2: 站会</h4>
+                                <p>Scenario 2: Stand-up Meeting</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="action-btn primary" onclick="navigateTo('checkin')">
+                        <span class="btn-icon">✅</span>
+                        <span>立即签到</span>
+                    </button>
+                    <button class="action-btn secondary" onclick="navigateTo('scenarios')">
+                        <span class="btn-icon">🎭</span>
+                        <span>开始练习</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Check-in Page -->
+            <div id="checkin-page" class="page">
+                <div class="page-header">
+                    <h2>✅ 活动签到</h2>
+                    <p>Activity Check-in</p>
+                </div>
+
+                <div class="checkin-form">
+                    <div class="form-group">
+                        <label for="participant-name">姓名 Name *</label>
+                        <input type="text" id="participant-name" placeholder="请输入您的姓名">
+                    </div>
+                    <div class="form-group">
+                        <label for="participant-email">邮箱 Email *</label>
+                        <input type="email" id="participant-email" placeholder="your.email@ibm.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="participant-group">分组 Group</label>
+                        <select id="participant-group">
+                            <option value="">请选择分组</option>
+                            <option value="interview-a">面试组A - Interviewers</option>
+                            <option value="interview-b">面试组B - Candidates</option>
+                            <option value="standup-1">站会Team 1</option>
+                            <option value="standup-2">站会Team 2</option>
+                            <option value="standup-3">站会Team 3</option>
+                            <option value="standup-4">站会Team 4</option>
+                        </select>
+                    </div>
+                    <button class="action-btn primary full-width" onclick="submitCheckin()">
+                        <span class="btn-icon">✓</span>
+                        <span>确认签到</span>
+                    </button>
+                </div>
+
+                <div class="checkin-stats">
+                    <h3>📊 签到统计</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="checked-in-count">0</div>
+                            <div class="stat-label">已签到</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value">28</div>
+                            <div class="stat-label">预计人数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="attendance-rate">0%</div>
+                            <div class="stat-label">签到率</div>
+                        </div>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="attendance-progress" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="checkin-list">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                        <h3 style="margin: 0;">📝 签到名单</h3>
+                        <button class="action-btn outline" onclick="exportCheckinData()" style="padding: 0.5rem 1rem; font-size: 0.875rem;">
+                            <span>📥 导出</span>
+                        </button>
+                    </div>
+                    <div id="checkin-list-content" class="list-content">
+                        <p class="empty-state">暂无签到记录</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenarios Page -->
+            <div id="scenarios-page" class="page">
+                <div class="page-header">
+                    <h2>🎭 场景练习</h2>
+                    <p>Scenario Practice</p>
+                </div>
+
+                <div class="scenario-tabs">
+                    <button class="tab-btn active" data-scenario="interview">面试场景</button>
+                    <button class="tab-btn" data-scenario="standup">站会场景</button>
+                    <button class="tab-btn" data-scenario="icebreaking">破冰活动</button>
+                </div>
+
+                <!-- Interview Scenario -->
+                <div id="interview-scenario" class="scenario-content active">
+                    <div class="scenario-card">
+                        <h3>💼 面试场景 Interview Scenario</h3>
+                        <p class="scenario-desc">Practice common interview questions and answers</p>
+                        
+                        <div class="question-list">
+                            <div class="question-item">
+                                <div class="question-header" onclick="toggleQuestion(this)">
+                                    <span class="question-icon">❓</span>
+                                    <span class="question-text">Tell me about yourself</span>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                                <div class="question-answer">
+                                    <p><strong>回答结构：</strong>当前职位 → 相关经验 → 为什么感兴趣</p>
+                                    <div class="example-box">
+                                        <p><strong>Example:</strong></p>
+                                        <p>"I'm currently a software engineer with 5 years of experience in cloud computing. I specialize in microservices architecture and have led several successful migration projects. I'm interested in this role because it offers opportunities to work with cutting-edge technologies."</p>
+                                    </div>
+                                    <button class="practice-btn" onclick="startPractice('tell-me-about-yourself')">
+                                        🎤 开始练习
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="question-item">
+                                <div class="question-header" onclick="toggleQuestion(this)">
+                                    <span class="question-icon">❓</span>
+                                    <span class="question-text">What are your strengths?</span>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                                <div class="question-answer">
+                                    <p><strong>常用表达：</strong></p>
+                                    <ul>
+                                        <li>"One of my key strengths is..."</li>
+                                        <li>"I'm particularly good at..."</li>
+                                        <li>"I excel in..."</li>
+                                    </ul>
+                                    <button class="practice-btn" onclick="startPractice('strengths')">
+                                        🎤 开始练习
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="question-item">
+                                <div class="question-header" onclick="toggleQuestion(this)">
+                                    <span class="question-icon">❓</span>
+                                    <span class="question-text">What are your weaknesses?</span>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                                <div class="question-answer">
+                                    <p><strong>回答策略：</strong>选择真实但不致命的弱点 + 说明如何改进</p>
+                                    <div class="example-box">
+                                        <p><strong>Example:</strong></p>
+                                        <p>"I used to struggle with public speaking, but I've been actively working on it by volunteering to present in team meetings. I've seen significant improvement and now feel much more confident."</p>
+                                    </div>
+                                    <button class="practice-btn" onclick="startPractice('weaknesses')">
+                                        🎤 开始练习
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="question-item">
+                                <div class="question-header" onclick="toggleQuestion(this)">
+                                    <span class="question-icon">❓</span>
+                                    <span class="question-text">Describe a challenging project</span>
+                                    <span class="expand-icon">▼</span>
+                                </div>
+                                <div class="question-answer">
+                                    <p><strong>使用STAR方法：</strong></p>
+                                    <ul>
+                                        <li><strong>S</strong>ituation - What was the context?</li>
+                                        <li><strong>T</strong>ask - What was your responsibility?</li>
+                                        <li><strong>A</strong>ction - What did you do?</li>
+                                        <li><strong>R</strong>esult - What was the outcome?</li>
+                                    </ul>
+                                    <button class="practice-btn" onclick="startPractice('challenging-project')">
+                                        🎤 开始练习
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stand-up Scenario -->
+                <div id="standup-scenario" class="scenario-content">
+                    <div class="scenario-card">
+                        <h3>🏃 站会场景 Stand-up Meeting</h3>
+                        <p class="scenario-desc">Practice daily stand-up meeting updates</p>
+                        
+                        <div class="standup-questions">
+                            <div class="standup-question">
+                                <h4>1️⃣ What did I do yesterday?</h4>
+                                <div class="template-box">
+                                    <p><strong>Template:</strong></p>
+                                    <p>"Yesterday, I [completed/worked on] [specific task]. I also [additional accomplishment]."</p>
+                                </div>
+                                <p><strong>常用动词：</strong>Completed, Implemented, Fixed, Reviewed, Deployed, Collaborated with</p>
+                                <button class="practice-btn" onclick="startPractice('yesterday')">
+                                    🎤 练习回答
+                                </button>
+                            </div>
+
+                            <div class="standup-question">
+                                <h4>2️⃣ What will I do today?</h4>
+                                <div class="template-box">
+                                    <p><strong>Template:</strong></p>
+                                    <p>"Today, I plan to [main task]. I'll also [secondary task] if time permits."</p>
+                                </div>
+                                <p><strong>常用表达：</strong></p>
+                                <ul>
+                                    <li>"I'll start working on..."</li>
+                                    <li>"My priority today is..."</li>
+                                    <li>"I plan to complete..."</li>
+                                </ul>
+                                <button class="practice-btn" onclick="startPractice('today')">
+                                    🎤 练习回答
+                                </button>
+                            </div>
+
+                            <div class="standup-question">
+                                <h4>3️⃣ Are there any blockers?</h4>
+                                <div class="template-box">
+                                    <p><strong>如果没有：</strong>"No blockers at the moment." / "Everything is on track."</p>
+                                    <p><strong>如果有：</strong>"I'm blocked by [specific issue]. I need [what you need] to move forward."</p>
+                                </div>
+                                <p><strong>常见阻碍：</strong>Waiting for code review, Need access to environment, Dependency on another team</p>
+                                <button class="practice-btn" onclick="startPractice('blockers')">
+                                    🎤 练习回答
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="best-practices">
+                            <h4>✅ 站会最佳实践</h4>
+                            <div class="practices-grid">
+                                <div class="practice-item do">
+                                    <h5>✅ DO</h5>
+                                    <ul>
+                                        <li>Be Prepared</li>
+                                        <li>Be Concise (1-2 min)</li>
+                                        <li>Be Specific</li>
+                                        <li>Speak Clearly</li>
+                                    </ul>
+                                </div>
+                                <div class="practice-item dont">
+                                    <h5>❌ DON'T</h5>
+                                    <ul>
+                                        <li>Go Into Details</li>
+                                        <li>Problem-Solve</li>
+                                        <li>Interrupt</li>
+                                        <li>Be Late</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ice-breaking Scenario -->
+                <div id="icebreaking-scenario" class="scenario-content">
+                    <div class="scenario-card">
+                        <h3>🎉 破冰活动 Ice-Breaking</h3>
+                        <p class="scenario-desc">Build confidence with fun introduction activities</p>
+                        
+                        <div class="icebreaking-activity">
+                            <h4>自我介绍模板 Self-Introduction</h4>
+                            <div class="template-box">
+                                <p>Hi, I'm [Your Name].</p>
+                                <p>I work in [Department/Team].</p>
+                                <p>An interesting fact about me is [something unique].</p>
+                                <p>I'm here today to [your learning goal].</p>
+                            </div>
+                            <button class="practice-btn" onclick="startPractice('self-intro')">
+                                🎤 练习自我介绍
+                            </button>
+                        </div>
+
+                        <div class="icebreaking-activity">
+                            <h4>两个真相一个谎言 Two Truths and a Lie</h4>
+                            <p>说三句关于自己的话，其中两句是真的，一句是假的，让其他人猜哪句是假的。</p>
+                            <div class="example-box">
+                                <p><strong>Example:</strong></p>
+                                <ol>
+                                    <li>I've been to 10 countries.</li>
+                                    <li>I can speak three languages.</li>
+                                    <li>I've climbed Mount Everest.</li>
+                                </ol>
+                            </div>
+                            <button class="practice-btn" onclick="startPractice('two-truths')">
+                                🎤 开始游戏
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vocabulary Page -->
+            <div id="vocabulary-page" class="page">
+                <div class="page-header">
+                    <h2>📚 实用词汇</h2>
+                    <p>Useful Vocabulary</p>
+                </div>
+
+                <div class="vocab-search">
+                    <input type="text" id="vocab-search-input" placeholder="🔍 搜索词汇... Search vocabulary">
+                </div>
+
+                <div class="vocab-categories">
+                    <button class="category-btn active" data-category="all">全部</button>
+                    <button class="category-btn" data-category="project">项目管理</button>
+                    <button class="category-btn" data-category="technical">技术术语</button>
+                    <button class="category-btn" data-category="status">状态描述</button>
+                </div>
+
+                <div class="vocab-list" id="vocab-list">
+                    <!-- Project Management -->
+                    <div class="vocab-section" data-category="project">
+                        <h3>项目管理 Project Management</h3>
+                        <div class="vocab-grid">
+                            <div class="vocab-card">
+                                <div class="vocab-en">Sprint</div>
+                                <div class="vocab-cn">冲刺/迭代</div>
+                                <button class="speak-btn" onclick="speakWord('Sprint')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Backlog</div>
+                                <div class="vocab-cn">待办事项</div>
+                                <button class="speak-btn" onclick="speakWord('Backlog')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">User Story</div>
+                                <div class="vocab-cn">用户故事</div>
+                                <button class="speak-btn" onclick="speakWord('User Story')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Retrospective</div>
+                                <div class="vocab-cn">回顾会议</div>
+                                <button class="speak-btn" onclick="speakWord('Retrospective')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Velocity</div>
+                                <div class="vocab-cn">速度/效率</div>
+                                <button class="speak-btn" onclick="speakWord('Velocity')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Definition of Done</div>
+                                <div class="vocab-cn">完成标准</div>
+                                <button class="speak-btn" onclick="speakWord('Definition of Done')">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Terms -->
+                    <div class="vocab-section" data-category="technical">
+                        <h3>技术术语 Technical Terms</h3>
+                        <div class="vocab-grid">
+                            <div class="vocab-card">
+                                <div class="vocab-en">Deploy</div>
+                                <div class="vocab-cn">部署</div>
+                                <button class="speak-btn" onclick="speakWord('Deploy')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Merge</div>
+                                <div class="vocab-cn">合并</div>
+                                <button class="speak-btn" onclick="speakWord('Merge')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Refactor</div>
+                                <div class="vocab-cn">重构</div>
+                                <button class="speak-btn" onclick="speakWord('Refactor')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Debug</div>
+                                <div class="vocab-cn">调试</div>
+                                <button class="speak-btn" onclick="speakWord('Debug')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Code Review</div>
+                                <div class="vocab-cn">代码审查</div>
+                                <button class="speak-btn" onclick="speakWord('Code Review')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Pull Request</div>
+                                <div class="vocab-cn">拉取请求</div>
+                                <button class="speak-btn" onclick="speakWord('Pull Request')">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Status -->
+                    <div class="vocab-section" data-category="status">
+                        <h3>状态描述 Status</h3>
+                        <div class="vocab-grid">
+                            <div class="vocab-card">
+                                <div class="vocab-en">On track</div>
+                                <div class="vocab-cn">按计划进行</div>
+                                <button class="speak-btn" onclick="speakWord('On track')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Completed</div>
+                                <div class="vocab-cn">已完成</div>
+                                <button class="speak-btn" onclick="speakWord('Completed')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">In progress</div>
+                                <div class="vocab-cn">进行中</div>
+                                <button class="speak-btn" onclick="speakWord('In progress')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Blocked</div>
+                                <div class="vocab-cn">被阻塞</div>
+                                <button class="speak-btn" onclick="speakWord('Blocked')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">Behind schedule</div>
+                                <div class="vocab-cn">进度落后</div>
+                                <button class="speak-btn" onclick="speakWord('Behind schedule')">🔊</button>
+                            </div>
+                            <div class="vocab-card">
+                                <div class="vocab-en">At risk</div>
+                                <div class="vocab-cn">有风险</div>
+                                <button class="speak-btn" onclick="speakWord('At risk')">🔊</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profile Page -->
+            <div id="profile-page" class="page">
+                <div class="page-header">
+                    <h2>👤 我的资料</h2>
+                    <p>My Profile</p>
+                </div>
+
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-placeholder">👤</div>
+                    </div>
+                    <div class="profile-info">
+                        <div class="profile-field">
+                            <label>姓名 Name</label>
+                            <div class="profile-value" id="profile-name">未设置</div>
+                        </div>
+                        <div class="profile-field">
+                            <label>邮箱 Email</label>
+                            <div class="profile-value" id="profile-email">未设置</div>
+                        </div>
+                        <div class="profile-field">
+                            <label>部门 Department</label>
+                            <div class="profile-value" id="profile-department">未设置</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="stats-card">
+                    <h3>📊 学习统计</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-practices">0</div>
+                            <div class="stat-label">总练习次数</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="total-time">0分钟</div>
+                            <div class="stat-label">总练习时长</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-value" id="practice-streak">0天</div>
+                            <div class="stat-label">连续练习</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="learning-goals">
+                    <h3>🎯 学习目标</h3>
+                    <div class="goals-list">
+                        <div class="goal-item">
+                            <input type="checkbox" id="goal-1">
+                            <label for="goal-1">提升口语表达信心</label>
+                        </div>
+                        <div class="goal-item">
+                            <input type="checkbox" id="goal-2">
+                            <label for="goal-2">学习实用的职场沟通技巧</label>
+                        </div>
+                        <div class="goal-item">
+                            <input type="checkbox" id="goal-3">
+                            <label for="goal-3">在轻松的下午茶氛围中练习职场英语</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="practice-history">
+                    <h3>📝 练习记录</h3>
+                    <div class="history-list">
+                        <p class="empty-state">暂无练习记录</p>
+                    </div>
+                </div>
+
+                <div class="tips-section">
+                    <h3>💡 学习小贴士</h3>
+                    <div class="tips-grid">
+                        <div class="tip-item">
+                            <h4>提升口语</h4>
+                            <ul>
+                                <li>每天练习15分钟</li>
+                                <li>录音评估进步</li>
+                                <li>模仿母语者</li>
+                                <li>扩充词汇量</li>
+                            </ul>
+                        </div>
+                        <div class="tip-item">
+                            <h4>克服紧张</h4>
+                            <ul>
+                                <li>深呼吸放松</li>
+                                <li>准备充分</li>
+                                <li>积极心态</li>
+                                <li>多多练习</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quick-actions">
+                    <button class="action-btn primary" onclick="exportAllData()">
+                        <span class="btn-icon">📥</span>
+                        <span>导出数据</span>
+                    </button>
+                    <button class="action-btn secondary" onclick="importData()">
+                        <span class="btn-icon">📤</span>
+                        <span>导入数据</span>
+                    </button>
+                    <button class="action-btn danger" onclick="clearAllData()">
+                        <span class="btn-icon">🗑️</span>
+                        <span>清除数据</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Practice Modal -->
+        <div id="practice-modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="practice-title">练习模式</h3>
+                    <button class="close-btn" onclick="closeModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="practice-question" id="practice-question">
+                        请回答以下问题：
+                    </div>
+                    <div class="practice-instructions">
+                        <p>💡 点击"开始录音"按钮，回答问题。录音完成后，可以回放并评估您的回答。</p>
+                    </div>
+                    <div class="recording-controls">
+                        <button id="start-record-btn" class="record-btn" onclick="startRecording()">
+                            🎤 开始录音
+                        </button>
+                        <button id="stop-record-btn" class="record-btn" onclick="stopRecording()" disabled>
+                            ⏹ 停止录音
+                        </button>
+                        <button id="play-record-btn" class="record-btn" onclick="playRecording()" disabled>
+                            ▶ 回放录音
+                        </button>
+                    </div>
+                    <div class="recording-status" id="recording-status">
+                        准备就绪
+                    </div>
+                    <div class="audio-player" id="audio-player" style="display: none;">
+                        <audio id="recorded-audio" controls></audio>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="modal-btn secondary" onclick="closeModal()">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
