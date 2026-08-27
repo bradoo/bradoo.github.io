@@ -105,7 +105,6 @@ http://localhost:8000
 - **UI 库**: jQuery 3.6.0
 - **动画库**: TweenLite, CSSPlugin
 - **图片展示**: Fancybox
-- **其他**: Vue.js (部分页面)
 
 ## 📊 性能指标
 
