@@ -8,7 +8,7 @@
         <link>https://bradoo.github.io/</link>
         <description>全栈工程师、系统架构师、马拉松跑者的个人博客 - 分享技术、跑步、演讲和读书心得</description>
         <language>zh-CN</language>
-        <lastBuildDate>Wed, 16 Apr 2026 12:00:00 +0800</lastBuildDate>
+        <lastBuildDate>Thu, 27 Aug 2026 16:00:00 +0800</lastBuildDate>
         <atom:link href="https://bradoo.github.io/feed.xml" rel="self" type="application/rss+xml"/>
         <image>
             <url>https://bradoo.github.io/images/logo.png</url>
@@ -16,6 +16,20 @@
             <link>https://bradoo.github.io/</link>
         </image>
         
+        <!-- 文章0: 技术分享 -->
+        <item>
+            <title>在美国IBM工作三次的趣事 - 吴勇 2014/12/5</title>
+            <link>https://bradoo.github.io/tech/ibm---2014125.html</link>
+            <guid>https://bradoo.github.io/tech/ibm---2014125.html</guid>
+            <pubDate>Thu, 27 Aug 2026 16:00:00 +0800</pubDate>
+            <dc:creator>吴勇</dc:creator>
+            <category>技术分享</category>
+            <description>记录三次赴美国 IBM 客户现场工作的经历：主动补位、连续攻坚，以及通过互相分享完成知识转移。</description>
+            <content:encoded><![CDATA[
+                <p>在IBM工作快八年了，我有幸受客户邀请赴美国工作了三次。虽然每次只有短短的一个月，但其间还是发生了不少让我记忆深刻的事儿。</p>
+            ]]></content:encoded>
+        </item>
+
         <!-- 文章1: 马拉松 -->
         <item>
             <title>我的第1个全程马拉松: 2017年大长山岛马拉松</title>
